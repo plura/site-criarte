@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cri.ar.te — Oficina de Expressão Criativa</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+	<style>
+		/* ─── Reset & Base ─────────────────────────────────────── */
+		*, *::before, *::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		:root {
+			--red:    #e4453d;
+			--green:  #008e71;
+			--blue:   #0077c2;
+			--yellow: #ffcc2c;
+			--pink:   #ec93ba;
+			--orange: #f27c00;
+			--grey:   #707070;
+			--text:   #3a3a3a;
+			--font-heading: 'Nunito', sans-serif;
+			--font-body:    'Nunito Sans', sans-serif;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			font-family: var(--font-body);
+			color: var(--text);
+			overflow-x: hidden;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		/* ─── Section title with coloured underline ────────────── */
+		.section-title {
+			display: inline-block;
+			font-family: var(--font-heading);
+			font-weight: 900;
+			font-size: clamp(2rem, 4vw, 3.5rem);
+			line-height: 1;
+			padding-bottom: 10px;
+			margin-bottom: 2rem;
+		}
+
+		.section-title::after {
+			content: '';
+			display: block;
+			height: 6px;
+			border-radius: 3px;
+			margin-top: 10px;
+		}
+
+		.section-title.red   { color: var(--red);    }
+		.section-title.red::after    { background: var(--red);    }
+		.section-title.green { color: var(--green);  }
+		.section-title.green::after  { background: var(--green);  }
+		.section-title.blue  { color: var(--blue);   }
+		.section-title.blue::after   { background: var(--blue);   }
+		.section-title.yellow{ color: var(--yellow); }
+		.section-title.yellow::after { background: var(--yellow); }
+		.section-title.pink  { color: var(--pink);   }
+		.section-title.pink::after   { background: var(--pink);   }
+
+		/* ─── NAV ───────────────────────────────────────────────── */
+		#nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 100;
+			background: #fff;
+			height: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 4vw;
+			box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+		}
+
+		.nav-logo {
+			height: 48px;
+		}
+
+		.nav-links {
+			display: flex;
+			gap: 0;
+			list-style: none;
+		}
+
+		.nav-links li a {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-family: var(--font-heading);
+			font-weight: 700;
+			font-size: 0.75rem;
+			letter-spacing: 0.04em;
+			color: var(--grey);
+			padding: 0 1.2rem;
+			gap: 6px;
+			transition: color 0.2s;
+		}
+
+		.nav-links li a:hover {
+			color: var(--text);
+		}
+
+		.nav-links li a .nav-bar {
+			display: block;
+			height: 5px;
+			border-radius: 3px;
+			width: 100%;
+		}
+
+		.nav-links li:nth-child(1) a .nav-bar { background: var(--red); }
+		.nav-links li:nth-child(2) a .nav-bar { background: var(--green); }
+		.nav-links li:nth-child(3) a .nav-bar { background: var(--blue); }
+		.nav-links li:nth-child(4) a .nav-bar { background: var(--yellow); }
+		.nav-links li:nth-child(5) a .nav-bar { background: var(--pink); }
+
+		.nav-hamburger {
+			display: none;
+			background: none;
+			border: none;
+			cursor: pointer;
+			padding: 4px;
+		}
+
+		/* ─── HERO ───────────────────────────────────────────────── */
+		#hero {
+			margin-top: 80px;
+			position: relative;
+			width: 100%;
+			height: 580px;
+			overflow: hidden;
+		}
+
+		.hero-bg {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center 30%;
+		}
+
+		.hero-overlay {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to right, transparent 35%, rgba(0,0,0,0.35) 100%);
+		}
+
+		.hero-text {
+			position: absolute;
+			right: 6vw;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: right;
+			color: #fff;
+			font-family: var(--font-heading);
+			font-weight: 900;
+			font-size: clamp(2rem, 3.5vw, 3.8rem);
+			line-height: 1.15;
+			max-width: 500px;
+			text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+		}
+
+		/* ─── O QUE É ───────────────────────────────────────────── */
+		#o-que-e {
+			padding: 80px 6vw;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+			align-items: start;
+			max-width: 1400px;
+			margin: 0 auto;
+		}
+
+		.o-que-e-text p {
+			font-size: 1rem;
+			line-height: 1.75;
+			color: var(--grey);
+			margin-bottom: 1.2em;
+		}
+
+		.o-que-e-text p:last-child {
+			font-weight: 700;
+			font-size: 1.1rem;
+			color: var(--text);
+		}
+
+		.o-que-e-visual {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			padding-top: 1rem;
+		}
+
+		.o-que-e-circle {
+			width: 340px;
+			height: 340px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		.o-que-e-triangle {
+			position: absolute;
+			bottom: -60px;
+			left: -40px;
+			width: 260px;
+			object-fit: cover;
+		}
+
+		.deco {
+			position: absolute;
+			pointer-events: none;
+		}
+
+		/* ─── QUEM SOMOS ─────────────────────────────────────────── */
+		#quem-somos {
+			background: rgba(0, 142, 113, 0.099);
+			padding: 80px 6vw;
+		}
+
+		#quem-somos .inner {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		#quem-somos .section-title {
+			display: block;
+			text-align: center;
+		}
+
+		#quem-somos .section-title::after {
+			margin: 10px auto 0;
+			width: 80%;
+		}
+
+		.team-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+			margin-top: 3rem;
+		}
+
+		.team-member {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			gap: 1rem;
+		}
+
+		.team-photo {
+			width: 220px;
+			height: 220px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		.team-member h3 {
+			font-family: var(--font-heading);
+			font-weight: 800;
+			font-size: 1.1rem;
+			color: var(--text);
+		}
+
+		.team-member p {
+			font-size: 0.9rem;
+			line-height: 1.7;
+			color: var(--grey);
+			max-width: 440px;
+		}
+
+		/* ─── AS NOSSAS OFICINAS ──────────────────────────────────── */
+		#oficinas {
+			padding: 80px 0;
+		}
+
+		#oficinas .section-header {
+			text-align: center;
+			padding: 0 6vw;
+			margin-bottom: 3rem;
+		}
+
+		.oficina {
+			position: relative;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+			min-height: 320px;
+			overflow: hidden;
+		}
+
+		.oficina-bg {
+			position: absolute;
+			inset: 0;
+			z-index: 0;
+		}
+
+		.oficina-img {
+			position: relative;
+			z-index: 1;
+			height: 320px;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		/* hexagon clip for Criativa */
+		.hexagon-clip {
+			clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+			width: 280px;
+			height: 280px;
+			object-fit: cover;
+			margin: 20px auto;
+		}
+
+		.oficina-content {
+			position: relative;
+			z-index: 1;
+			padding: 3rem 5vw;
+		}
+
+		.oficina-title {
+			font-family: var(--font-heading);
+			font-weight: 900;
+			font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+			line-height: 1.1;
+			margin-bottom: 1rem;
+		}
+
+		.oficina-text {
+			font-size: 0.95rem;
+			line-height: 1.75;
+			color: var(--grey);
+			max-width: 480px;
+		}
+
+		/* Per-oficina colour tints & title colours */
+		.oficina-criativa .oficina-bg    { background: rgba(255, 204, 44, 0.2); }
+		.oficina-criativa .oficina-title { color: var(--yellow); }
+
+		.oficina-cuidar .oficina-bg      { background: rgba(0, 142, 113, 0.2); }
+		.oficina-cuidar .oficina-title   { color: var(--green); }
+
+		.oficina-historia .oficina-bg    { background: rgba(228, 69, 61, 0.2); }
+		.oficina-historia .oficina-title { color: var(--red); }
+
+		.oficina-escrita .oficina-bg     { background: rgba(0, 119, 194, 0.2); }
+		.oficina-escrita .oficina-title  { color: var(--blue); }
+
+		.oficina-artes .oficina-bg       { background: rgba(242, 124, 0, 0.2); }
+		.oficina-artes .oficina-title    { color: var(--orange); }
+
+		.oficina-emocoes .oficina-bg     { background: rgba(236, 147, 186, 0.2); }
+		.oficina-emocoes .oficina-title  { color: var(--pink); }
+
+		/* Reverse layout for odd rows */
+		.oficina.reverse .oficina-img-wrap { order: 2; }
+		.oficina.reverse .oficina-content  { order: 1; }
+
+		/* ─── EVENTOS ─────────────────────────────────────────────── */
+		#eventos {
+			background: rgba(255, 204, 44, 0.099);
+			padding: 80px 6vw;
+		}
+
+		#eventos .inner {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+			align-items: center;
+		}
+
+		.eventos-text p {
+			font-size: 1rem;
+			line-height: 1.75;
+			color: var(--grey);
+			margin-bottom: 1.5rem;
+			max-width: 480px;
+		}
+
+		.fale-connosco {
+			font-family: var(--font-heading);
+			font-weight: 800;
+			font-size: 1.8rem;
+			color: var(--text);
+		}
+
+		.eventos-images {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 360px;
+		}
+
+		/* triangle clip */
+		.eventos-triangle {
+			width: 260px;
+			height: 260px;
+			object-fit: cover;
+			clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+			position: absolute;
+			left: -20px;
+			bottom: 0;
+		}
+
+		/* circle clip */
+		.eventos-circle {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			object-fit: cover;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+		}
+
+		/* rotated rect */
+		.eventos-rect {
+			width: 280px;
+			height: 220px;
+			object-fit: cover;
+			position: absolute;
+			right: -20px;
+			top: 10px;
+			transform: rotate(3deg);
+			border-radius: 4px;
+			box-shadow: 4px 4px 20px rgba(0,0,0,0.15);
+		}
+
+		/* ─── CONTACTOS ────────────────────────────────────────────── */
+		#contactos {
+			background: #fff;
+			padding: 60px 6vw 80px;
+			text-align: center;
+		}
+
+		#contactos .inner {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.contactos-email {
+			font-family: var(--font-body);
+			font-size: clamp(1.2rem, 2.5vw, 2rem);
+			color: var(--grey);
+			margin-top: 1.5rem;
+		}
+
+		.contactos-email a:hover {
+			color: var(--red);
+		}
+
+		/* ─── Decorative SVG icons positioning ────────────────────── */
+		.deco-abs {
+			position: absolute;
+			pointer-events: none;
+			user-select: none;
+		}
+
+		/* ─── Responsive ───────────────────────────────────────────── */
+		@media (max-width: 900px) {
+			#o-que-e {
+				grid-template-columns: 1fr;
+			}
+			.o-que-e-visual {
+				display: none;
+			}
+			.team-grid {
+				grid-template-columns: 1fr;
+			}
+			.oficina {
+				grid-template-columns: 1fr;
+			}
+			.oficina-img {
+				height: 240px;
+			}
+			.oficina.reverse .oficina-img-wrap { order: 0; }
+			.oficina.reverse .oficina-content  { order: 0; }
+			#eventos .inner {
+				grid-template-columns: 1fr;
+			}
+			.eventos-images {
+				height: 280px;
+			}
+			.nav-links {
+				display: none;
+			}
+			.nav-hamburger {
+				display: block;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<!-- ═══ NAV ════════════════════════════════════════════════ -->
+	<nav id="nav">
+		<a href="#hero">
+			<img src="assets/Group_2.svg" alt="Cri.ar.te" class="nav-logo">
+		</a>
+
+		<ul class="nav-links">
+			<li><a href="#o-que-e"><span>O QUE É</span><span class="nav-bar"></span></a></li>
+			<li><a href="#quem-somos"><span>QUEM SOMOS</span><span class="nav-bar"></span></a></li>
+			<li><a href="#oficinas"><span>AS NOSSAS OFICINAS</span><span class="nav-bar"></span></a></li>
+			<li><a href="#eventos"><span>EVENTOS</span><span class="nav-bar"></span></a></li>
+			<li><a href="#contactos"><span>CONTACTOS</span><span class="nav-bar"></span></a></li>
+		</ul>
+
+		<button class="nav-hamburger" aria-label="Menu">
+			<img src="assets/Group_145.svg" alt="Menu" width="44">
+		</button>
+	</nav>
+
+	<!-- ═══ HERO ════════════════════════════════════════════════ -->
+	<section id="hero">
+		<img src="assets/Mask_Group_3_2x.jpg" alt="Crianças a correr num campo" class="hero-bg">
+		<div class="hero-overlay"></div>
+		<div class="hero-text">
+			A CRIANÇA<br>
+			QUE IMAGINA<br>
+			É CRIATIVA E<br>
+			MOSTRA O SEU<br>
+			PODER DE
+		</div>
+	</section>
+
+	<!-- ═══ O QUE É ════════════════════════════════════════════ -->
+	<section id="o-que-e">
+		<div class="o-que-e-text">
+			<h2 class="section-title red">O QUE É</h2>
+			<p>Na Cri.ar.te procuramos promover o bem-estar infantil através da arte, procurando conhecer as emoções de cada criança oferecendo-lhe atividades sensoriais.</p>
+			<p>À medida que vai crescendo, a criança manifesta mais as suas vontades, os seus medos, as suas emoções e necessidades.</p>
+			<p>Desenhar, pintar, modelar, cantar, dançar, fantasiar e interpretar são algumas formas que utilizamos para ajudar a criança a desenvolver a sensibilidade, expressar as suas emoções e revelar habilidades. Educar com arte ajuda a criança a construir o seu mundo real de uma forma lúdica, descobrindo-se.</p>
+			<p>O incentivo das artes é, a melhor forma de ajudar a desfrutar de cada passo do processo e a saber lidar com a frustração. Mais importante do que participar é divertir-se pelo caminho! – esta é uma lição para a vida.</p>
+			<p>Saber falhar é a regra número 1 de um artista e essa regra é válida também para artistas de palmo e meio. Além de desenvolver ferramentas emocionais tão importantes como a resiliência, a paciência e o autocontrolo, as artes promovem o encorajamento, colocando a criança num "aqui e agora" onde não há certo, nem errado – o que eleva a autoestima e a autoconfiança.</p>
+			<p>Como já ouvimos algures, a arte vem de dentro do peito, e é assim que a Cri.ar.te procura que continue!</p>
+		</div>
+		<div class="o-que-e-visual">
+			<img src="assets/Mask_Group_17_2x.jpg" alt="Crianças a jogar" class="o-que-e-circle">
+			<img src="assets/Mask_Group_16_2x.jpg" alt="Crianças com paraquedas" class="o-que-e-triangle">
+			<img src="assets/Group_22.svg" alt="" class="deco-abs" style="width:120px; top:-20px; right:-30px;">
+			<img src="assets/Group_25.svg" alt="" class="deco-abs" style="width:100px; bottom:60px; right:20px;">
+		</div>
+	</section>
+
+	<!-- ═══ QUEM SOMOS ══════════════════════════════════════════ -->
+	<section id="quem-somos">
+		<div class="inner">
+			<h2 class="section-title green">QUEM SOMOS</h2>
+			<div class="team-grid">
+				<div class="team-member">
+					<img src="assets/Group_13_2x.jpg" alt="Maria João Patrão Freitas" class="team-photo">
+					<img src="assets/Group_5.svg" alt="" style="width:80px;">
+					<h3>Maria João Patrão Freitas</h3>
+					<p>Chamo-me Maria João, nasci em Lisboa, sou psicóloga clínica de coração, apaixonada por crianças, artes e animais. Apaixonei-me desde muito cedo pelo mundo dos mais pequenos. Mãe de uma família numerosa, entre os meus, os teus e os nossos, procurei ao longo da minha vivência tornar as artes algo presente no nosso cotidiano. Aos 18 anos comecei a trabalhar em tempos livres com crianças, mais tarde fui cocriadora e dinamizadora de campos de férias e tenho promovido encontros de crianças com as artes em forma de expressão para as emoções, através de atividades sensoriais. Com a Cri.ar.te pretendo criar arte em momentos dedicados aos pequenos artistas.</p>
+				</div>
+				<div class="team-member">
+					<img src="assets/Group_19_2x.jpg" alt="Cristina Matos" class="team-photo">
+					<img src="assets/Group_7.svg" alt="" style="width:80px;">
+					<h3>Cristina Matos</h3>
+					<p>Chamo-me Cristina, gosto de livros, arte e pessoas. Nasci no Alentejo e deambulo entre pulular da vida na cidade de Lisboa, onde vivo, e a calma do Alentejo onde vou com frequência. Tenho como formação o estudo de Línguas mas fui alargando o meu leque de aprendizagens com os mais diversos interesses. Já fiz formações em áreas tão diversas como escrita criativa, cerâmica, aguarelas, meditação e alimentação consciente. Participo em vários clubes de leitura e sou leitora compulsiva. Tenho participado em alguns projetos de ocupação em tempos livres para crianças, no meu Alentejo, onde procuro potenciar o interesse das crianças pela leitura e escrita através da organização de oficinas de escrita criativa. Com a Cri.ar.te tenho o desejo de ser parte ativa no desenvolvimento de autoconfiança e amor próprio das crianças potenciando o artista que existe em cada uma delas.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ AS NOSSAS OFICINAS ══════════════════════════════════ -->
+	<section id="oficinas">
+		<div class="section-header">
+			<h2 class="section-title blue">AS NOSSAS OFICINAS</h2>
+		</div>
+
+		<!-- Oficina Criativa -->
+		<div class="oficina oficina-criativa">
+			<div class="oficina-bg"></div>
+			<div class="oficina-img-wrap" style="display:flex; align-items:center; justify-content:center; padding:20px; position:relative; z-index:1;">
+				<img src="assets/Mask_Group_4_2x.jpg" alt="Oficina Criativa" class="hexagon-clip">
+			</div>
+			<div class="oficina-content">
+				<img src="assets/Group_92.svg" alt="" style="width:100px; margin-bottom:1rem;">
+				<h3 class="oficina-title">OFICINA CRIATIVA</h3>
+				<p class="oficina-text">Realizamos 2 ou 3 projetos criativos, com liberdade na escolha e utilização dos materiais. Sem limites à imaginação, podemos criar uma árvore que fala ou uma nuvem de chapéu!</p>
+			</div>
+		</div>
+
+		<!-- Oficina Cuidar -->
+		<div class="oficina oficina-cuidar reverse">
+			<div class="oficina-bg"></div>
+			<div class="oficina-content">
+				<img src="assets/Group_70.svg" alt="" style="width:100px; margin-bottom:1rem;">
+				<h3 class="oficina-title">OFICINA CUIDAR</h3>
+				<p class="oficina-text">O nosso foco está na natureza, pensando em tudo o que ela nos dá, mas também no cuidar. Vamos criar uma nova casa para uma planta e com amor aprender a cuidar dela.</p>
+			</div>
+			<div class="oficina-img-wrap" style="position:relative; z-index:1;">
+				<img src="assets/Mask_Group_5_2x.jpg" alt="Oficina Cuidar" class="oficina-img">
+			</div>
+		</div>
+
+		<!-- Oficina História Escondida -->
+		<div class="oficina oficina-historia">
+			<div class="oficina-bg"></div>
+			<div class="oficina-img-wrap" style="position:relative; z-index:1;">
+				<img src="assets/Mask_Group_6_2x.jpg" alt="Oficina História Escondida" class="oficina-img">
+			</div>
+			<div class="oficina-content">
+				<img src="assets/Group_41.svg" alt="" style="width:100px; margin-bottom:1rem;">
+				<h3 class="oficina-title">OFICINA HISTÓRIA<br>ESCONDIDA</h3>
+				<p class="oficina-text">Escolhemos um livro e através da sua leitura em conjunto vamos descobrir a história escondida no seu, e no nosso, interior. Vamos representá-la por mímicas, expressões, vontades e desejos.</p>
+			</div>
+		</div>
+
+		<!-- Oficina da Escrita Criativa -->
+		<div class="oficina oficina-escrita reverse">
+			<div class="oficina-bg"></div>
+			<div class="oficina-content">
+				<img src="assets/Group_126.svg" alt="" style="width:100px; margin-bottom:1rem;">
+				<h3 class="oficina-title">OFICINA DA<br>ESCRITA CRIATIVA</h3>
+				<p class="oficina-text">Pensar e escrever torto por linhas direitas. Vamos criar uma história em conjunto de forma individual. No fim, vamos perceber que todos nós contribuímos para este todo!</p>
+			</div>
+			<div class="oficina-img-wrap" style="position:relative; z-index:1;">
+				<img src="assets/Mask_Group_9_2x.jpg" alt="Oficina da Escrita Criativa" class="oficina-img">
+			</div>
+		</div>
+
+		<!-- Oficina de Artes -->
+		<div class="oficina oficina-artes">
+			<div class="oficina-bg"></div>
+			<div class="oficina-img-wrap" style="position:relative; z-index:1;">
+				<img src="assets/Mask_Group_12_2x.jpg" alt="Oficina de Artes" class="oficina-img">
+			</div>
+			<div class="oficina-content">
+				<img src="assets/Group_136.svg" alt="" style="width:100px; margin-bottom:1rem;">
+				<h3 class="oficina-title">OFICINA DE ARTES</h3>
+				<p class="oficina-text">Pintar, desenhar, colorir. Sem limites, podemos pintar com o pincel, com as mãos ou com os pés. Vamos colocar à disposição folhas brancas e vários materiais de pintura e vamos aprender a preencher o vazio.</p>
+			</div>
+		</div>
+
+		<!-- Oficina das Emoções -->
+		<div class="oficina oficina-emocoes reverse">
+			<div class="oficina-bg"></div>
+			<div class="oficina-content">
+				<img src="assets/Group_139.svg" alt="" style="width:100px; margin-bottom:1rem;">
+				<h3 class="oficina-title">OFICINA DAS EMOÇÕES</h3>
+				<p class="oficina-text">Através das expressões faciais e das cores vamos contar o que estamos a sentir. Vamos criar um amigo imaginário para levar no bolso.</p>
+			</div>
+			<div class="oficina-img-wrap" style="position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:0;">
+				<img src="assets/Mask_Group_14_2x.jpg" alt="Oficina das Emoções" class="oficina-img">
+				<img src="assets/Mask_Group_13_2x.jpg" alt="Oficina das Emoções" class="oficina-img">
+			</div>
+		</div>
+
+	</section>
+
+	<!-- ═══ EVENTOS ════════════════════════════════════════════ -->
+	<section id="eventos">
+		<div class="inner">
+			<div class="eventos-text">
+				<h2 class="section-title yellow">EVENTOS</h2>
+				<p>A Cri.ar.te cria um pouco por toda a parte. Não somos só oficinas e vamos onde nos receberem, a casa, a escolas e afins. Criamos aquela festa de aniversário especial e desenvolvemos atividades de acompanhamento individual.</p>
+				<p class="fale-connosco">Fale connosco.</p>
+			</div>
+			<div class="eventos-images">
+				<img src="assets/Mask_Group_16_2x.jpg" alt="Evento" class="eventos-triangle">
+				<img src="assets/Mask_Group_17_2x.jpg" alt="Evento" class="eventos-circle">
+				<img src="assets/Mask_Group_15_2x.jpg" alt="Festa de aniversário" class="eventos-rect">
+				<img src="assets/Group_144.svg" alt="" class="deco-abs" style="width:80px; top:0; right:60px;">
+				<img src="assets/Group_140.svg" alt="" class="deco-abs" style="width:70px; bottom:0; left:60px;">
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ CONTACTOS ══════════════════════════════════════════ -->
+	<section id="contactos">
+		<div class="inner">
+			<h2 class="section-title pink">CONTACTOS</h2>
+			<p class="contactos-email">
+				<a href="mailto:info@criarte.pt">info@criarte.pt</a>
+			</p>
+		</div>
+	</section>
+
+</body>
+</html>
