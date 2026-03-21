@@ -41,6 +41,10 @@ a {
 	color: inherit;
 }
 
+p {
+	text-align: justify;
+}
+
 /* ─── Container ─────────────────────────────────────────── */
 .container {
 	max-width: 1080px;
@@ -269,21 +273,25 @@ a {
 	gap: 1rem;
 }
 
-.team-photo {
+.team-member-photo {
 	width: 220px;
 	height: 220px;
 	border-radius: 50%;
 	object-fit: cover;
 }
 
-.team-member h3 {
+.team-member-icon {
+	width: 80px;
+}
+
+.team-member-name {
 	font-family: var(--criarte-fonts-heading);
 	font-weight: 800;
 	font-size: 1.1rem;
 	color: var(--criarte-colors-text);
 }
 
-.team-member p {
+.team-member-description p {
 	font-size: 0.9rem;
 	line-height: 1.7;
 	color: var(--criarte-colors-grey);
