@@ -16,6 +16,9 @@
 	--criarte-colors-grey:   #707070;
 	--criarte-colors-text:   #3a3a3a;
 
+	/* ─── Spacing ───────────────────────────────────────────────── */
+	--criarte-oficina-pad-large: max(5vw, calc((100dvw - 1080px) / 2));
+
 	/* ─── Fonts ──────────────────────────────────────────────── */
 	--criarte-fonts-heading: 'Nunito', sans-serif;
 	--criarte-fonts-body:    'Nunito Sans', sans-serif;
@@ -356,6 +359,12 @@ p {
 	position: relative;
 	z-index: 1;
 	padding: 3rem 5vw;
+	padding-right: var(--criarte-oficina-pad-large);
+}
+
+.oficina.reverse .oficina-content {
+	padding-right: 5vw;
+	padding-left: var(--criarte-oficina-pad-large);
 }
 
 .oficina-title {
