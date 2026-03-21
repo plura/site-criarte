@@ -41,6 +41,13 @@ a {
 	color: inherit;
 }
 
+/* ─── Container ─────────────────────────────────────────── */
+.container {
+	max-width: 1080px;
+	margin: 0 auto;
+	width: 100%;
+}
+
 /* ─── Section title with coloured underline ────────────── */
 .section-title {
 	display: inline-block;
@@ -176,12 +183,13 @@ a {
 /* ─── O QUE É ───────────────────────────────────────────── */
 #o-que-e {
 	padding: 80px 6vw;
+}
+
+#o-que-e .container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 4rem;
 	align-items: start;
-	max-width: 1400px;
-	margin: 0 auto;
 }
 
 .o-que-e-text p {
@@ -231,17 +239,17 @@ a {
 	padding: 80px 6vw;
 }
 
-#quem-somos .inner {
-	max-width: 1200px;
+#quem-somos .container {
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
-#quem-somos .section-title {
+#quem-somos .container .section-title {
 	display: block;
 	text-align: center;
 }
 
-#quem-somos .section-title::after {
+#quem-somos .container .section-title::after {
 	margin: 10px auto 0;
 	width: 80%;
 }
@@ -297,7 +305,7 @@ a {
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	align-items: center;
+	align-items: stretch;
 	min-height: 320px;
 	overflow: hidden;
 }
@@ -308,10 +316,21 @@ a {
 	z-index: 0;
 }
 
+.oficina-img-wrap {
+	position: relative;
+	z-index: 1;
+	display: flex;
+}
+
+.oficina-img-wrap--split {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
 .oficina-img {
 	position: relative;
 	z-index: 1;
-	height: 320px;
+	height: 100%;
 	width: 100%;
 	object-fit: cover;
 }
@@ -375,9 +394,7 @@ a {
 	padding: 80px 6vw;
 }
 
-#eventos .inner {
-	max-width: 1200px;
-	margin: 0 auto;
+#eventos .container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 4rem;
@@ -451,7 +468,7 @@ a {
 	text-align: center;
 }
 
-#contactos .inner {
+#contactos .container {
 	max-width: 600px;
 	margin: 0 auto;
 }
@@ -476,7 +493,7 @@ a {
 
 /* ─── Responsive ───────────────────────────────────────────── */
 @media (max-width: 900px) {
-	#o-que-e {
+	#o-que-e .container {
 		grid-template-columns: 1fr;
 	}
 	.o-que-e-visual {
@@ -488,12 +505,15 @@ a {
 	.oficina {
 		grid-template-columns: 1fr;
 	}
+	.oficina-img-wrap {
+		min-height: 240px;
+	}
 	.oficina-img {
 		height: 240px;
 	}
 	.oficina.reverse .oficina-img-wrap { order: 0; }
 	.oficina.reverse .oficina-content  { order: 0; }
-	#eventos .inner {
+	#eventos .container {
 		grid-template-columns: 1fr;
 	}
 	.eventos-images {
