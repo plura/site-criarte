@@ -16,8 +16,10 @@
 	--criarte-colors-grey:   #707070;
 	--criarte-colors-text:   #3a3a3a;
 
-	/* ─── Spacing ───────────────────────────────────────────────── */
-	--criarte-oficina-pad-large: max(5vw, calc((100dvw - 1080px) / 2));
+	/* ─── Layout ────────────────────────────────────────────────── */
+	--criarte-layout-container: 1080px;
+	--criarte-layout-pad:       6vw;
+	--criarte-layout-pad-large: max(var(--criarte-layout-pad), calc((100dvw - var(--criarte-layout-container)) / 2));
 
 	/* ─── Fonts ──────────────────────────────────────────────── */
 	--criarte-fonts-heading: 'Nunito', sans-serif;
@@ -50,7 +52,7 @@ p {
 
 /* ─── Container ─────────────────────────────────────────── */
 .container {
-	max-width: 1080px;
+	max-width: var(--criarte-layout-container);
 	margin: 0 auto;
 	width: 100%;
 }
@@ -247,7 +249,7 @@ p {
 }
 
 #quem-somos .container {
-	max-width: 1080px;
+	max-width: var(--criarte-layout-container);
 	margin: 0 auto;
 }
 
@@ -358,13 +360,13 @@ p {
 .oficina-content {
 	position: relative;
 	z-index: 1;
-	padding: 3rem 5vw;
-	padding-right: var(--criarte-oficina-pad-large);
+	padding: calc(var(--criarte-layout-pad) / 2) var(--criarte-layout-pad);
+	padding-right: var(--criarte-layout-pad-large);
 }
 
 .oficina.reverse .oficina-content {
-	padding-right: 5vw;
-	padding-left: var(--criarte-oficina-pad-large);
+	padding-right: var(--criarte-layout-pad);
+	padding-left: var(--criarte-layout-pad-large);
 }
 
 .oficina-title {
