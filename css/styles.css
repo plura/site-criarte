@@ -6,16 +6,19 @@
 }
 
 :root {
-	--red:    #e4453d;
-	--green:  #008e71;
-	--blue:   #0077c2;
-	--yellow: #ffcc2c;
-	--pink:   #ec93ba;
-	--orange: #f27c00;
-	--grey:   #707070;
-	--text:   #3a3a3a;
-	--font-heading: 'Nunito', sans-serif;
-	--font-body:    'Nunito Sans', sans-serif;
+	/* ─── Colors ─────────────────────────────────────────────── */
+	--criarte-colors-red:    #e4453d;
+	--criarte-colors-green:  #008e71;
+	--criarte-colors-blue:   #0077c2;
+	--criarte-colors-yellow: #ffcc2c;
+	--criarte-colors-pink:   #ec93ba;
+	--criarte-colors-orange: #f27c00;
+	--criarte-colors-grey:   #707070;
+	--criarte-colors-text:   #3a3a3a;
+
+	/* ─── Fonts ──────────────────────────────────────────────── */
+	--criarte-fonts-heading: 'Nunito', sans-serif;
+	--criarte-fonts-body:    'Nunito Sans', sans-serif;
 }
 
 html {
@@ -23,8 +26,8 @@ html {
 }
 
 body {
-	font-family: var(--font-body);
-	color: var(--text);
+	font-family: var(--criarte-fonts-body);
+	color: var(--criarte-colors-text);
 	overflow-x: hidden;
 }
 
@@ -41,7 +44,7 @@ a {
 /* ─── Section title with coloured underline ────────────── */
 .section-title {
 	display: inline-block;
-	font-family: var(--font-heading);
+	font-family: var(--criarte-fonts-heading);
 	font-weight: 900;
 	font-size: clamp(2rem, 4vw, 3.5rem);
 	line-height: 1;
@@ -57,16 +60,16 @@ a {
 	margin-top: 10px;
 }
 
-.section-title.red   { color: var(--red);    }
-.section-title.red::after    { background: var(--red);    }
-.section-title.green { color: var(--green);  }
-.section-title.green::after  { background: var(--green);  }
-.section-title.blue  { color: var(--blue);   }
-.section-title.blue::after   { background: var(--blue);   }
-.section-title.yellow{ color: var(--yellow); }
-.section-title.yellow::after { background: var(--yellow); }
-.section-title.pink  { color: var(--pink);   }
-.section-title.pink::after   { background: var(--pink);   }
+.section-title.red   { color: var(--criarte-colors-red);    }
+.section-title.red::after    { background: var(--criarte-colors-red);    }
+.section-title.green { color: var(--criarte-colors-green);  }
+.section-title.green::after  { background: var(--criarte-colors-green);  }
+.section-title.blue  { color: var(--criarte-colors-blue);   }
+.section-title.blue::after   { background: var(--criarte-colors-blue);   }
+.section-title.yellow{ color: var(--criarte-colors-yellow); }
+.section-title.yellow::after { background: var(--criarte-colors-yellow); }
+.section-title.pink  { color: var(--criarte-colors-pink);   }
+.section-title.pink::after   { background: var(--criarte-colors-pink);   }
 
 /* ─── NAV ───────────────────────────────────────────────── */
 #nav {
@@ -98,18 +101,18 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: var(--font-heading);
+	font-family: var(--criarte-fonts-heading);
 	font-weight: 700;
 	font-size: 0.75rem;
 	letter-spacing: 0.04em;
-	color: var(--grey);
+	color: var(--criarte-colors-grey);
 	padding: 0 1.2rem;
 	gap: 6px;
 	transition: color 0.2s;
 }
 
 .nav-links li a:hover {
-	color: var(--text);
+	color: var(--criarte-colors-text);
 }
 
 .nav-links li a .nav-bar {
@@ -119,11 +122,11 @@ a {
 	width: 100%;
 }
 
-.nav-links li:nth-child(1) a .nav-bar { background: var(--red); }
-.nav-links li:nth-child(2) a .nav-bar { background: var(--green); }
-.nav-links li:nth-child(3) a .nav-bar { background: var(--blue); }
-.nav-links li:nth-child(4) a .nav-bar { background: var(--yellow); }
-.nav-links li:nth-child(5) a .nav-bar { background: var(--pink); }
+.nav-links li:nth-child(1) a .nav-bar { background: var(--criarte-colors-red); }
+.nav-links li:nth-child(2) a .nav-bar { background: var(--criarte-colors-green); }
+.nav-links li:nth-child(3) a .nav-bar { background: var(--criarte-colors-blue); }
+.nav-links li:nth-child(4) a .nav-bar { background: var(--criarte-colors-yellow); }
+.nav-links li:nth-child(5) a .nav-bar { background: var(--criarte-colors-pink); }
 
 .nav-hamburger {
 	display: none;
@@ -162,7 +165,7 @@ a {
 	transform: translateY(-50%);
 	text-align: right;
 	color: #fff;
-	font-family: var(--font-heading);
+	font-family: var(--criarte-fonts-heading);
 	font-weight: 900;
 	font-size: clamp(2rem, 3.5vw, 3.8rem);
 	line-height: 1.15;
@@ -184,14 +187,14 @@ a {
 .o-que-e-text p {
 	font-size: 1rem;
 	line-height: 1.75;
-	color: var(--grey);
+	color: var(--criarte-colors-grey);
 	margin-bottom: 1.2em;
 }
 
 .o-que-e-text p:last-child {
 	font-weight: 700;
 	font-size: 1.1rem;
-	color: var(--text);
+	color: var(--criarte-colors-text);
 }
 
 .o-que-e-visual {
@@ -266,16 +269,16 @@ a {
 }
 
 .team-member h3 {
-	font-family: var(--font-heading);
+	font-family: var(--criarte-fonts-heading);
 	font-weight: 800;
 	font-size: 1.1rem;
-	color: var(--text);
+	color: var(--criarte-colors-text);
 }
 
 .team-member p {
 	font-size: 0.9rem;
 	line-height: 1.7;
-	color: var(--grey);
+	color: var(--criarte-colors-grey);
 	max-width: 440px;
 }
 
@@ -329,7 +332,7 @@ a {
 }
 
 .oficina-title {
-	font-family: var(--font-heading);
+	font-family: var(--criarte-fonts-heading);
 	font-weight: 900;
 	font-size: clamp(1.6rem, 2.5vw, 2.5rem);
 	line-height: 1.1;
@@ -339,28 +342,28 @@ a {
 .oficina-text {
 	font-size: 0.95rem;
 	line-height: 1.75;
-	color: var(--grey);
+	color: var(--criarte-colors-grey);
 	max-width: 480px;
 }
 
 /* Per-oficina colour tints & title colours */
 .oficina-criativa .oficina-bg    { background: rgba(255, 204, 44, 0.2); }
-.oficina-criativa .oficina-title { color: var(--yellow); }
+.oficina-criativa .oficina-title { color: var(--criarte-colors-yellow); }
 
 .oficina-cuidar .oficina-bg      { background: rgba(0, 142, 113, 0.2); }
-.oficina-cuidar .oficina-title   { color: var(--green); }
+.oficina-cuidar .oficina-title   { color: var(--criarte-colors-green); }
 
 .oficina-historia .oficina-bg    { background: rgba(228, 69, 61, 0.2); }
-.oficina-historia .oficina-title { color: var(--red); }
+.oficina-historia .oficina-title { color: var(--criarte-colors-red); }
 
 .oficina-escrita .oficina-bg     { background: rgba(0, 119, 194, 0.2); }
-.oficina-escrita .oficina-title  { color: var(--blue); }
+.oficina-escrita .oficina-title  { color: var(--criarte-colors-blue); }
 
 .oficina-artes .oficina-bg       { background: rgba(242, 124, 0, 0.2); }
-.oficina-artes .oficina-title    { color: var(--orange); }
+.oficina-artes .oficina-title    { color: var(--criarte-colors-orange); }
 
 .oficina-emocoes .oficina-bg     { background: rgba(236, 147, 186, 0.2); }
-.oficina-emocoes .oficina-title  { color: var(--pink); }
+.oficina-emocoes .oficina-title  { color: var(--criarte-colors-pink); }
 
 /* Reverse layout for odd rows */
 .oficina.reverse .oficina-img-wrap { order: 2; }
@@ -384,16 +387,16 @@ a {
 .eventos-text p {
 	font-size: 1rem;
 	line-height: 1.75;
-	color: var(--grey);
+	color: var(--criarte-colors-grey);
 	margin-bottom: 1.5rem;
 	max-width: 480px;
 }
 
 .fale-connosco {
-	font-family: var(--font-heading);
+	font-family: var(--criarte-fonts-heading);
 	font-weight: 800;
 	font-size: 1.8rem;
-	color: var(--text);
+	color: var(--criarte-colors-text);
 }
 
 .eventos-images {
@@ -454,14 +457,14 @@ a {
 }
 
 .contactos-email {
-	font-family: var(--font-body);
+	font-family: var(--criarte-fonts-body);
 	font-size: clamp(1.2rem, 2.5vw, 2rem);
-	color: var(--grey);
+	color: var(--criarte-colors-grey);
 	margin-top: 1.5rem;
 }
 
 .contactos-email a:hover {
-	color: var(--red);
+	color: var(--criarte-colors-red);
 }
 
 /* ─── Decorative SVG icons positioning ────────────────────── */
