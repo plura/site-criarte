@@ -16,8 +16,9 @@
 	--criarte-colors-orange: #f27c00;
 	--criarte-colors-grey:        #707070;
 	--criarte-colors-text:        #3a3a3a;
-	--criarte-colors-green-light: #daeeea;
+	--criarte-colors-green-light:  #daeeea;
 	--criarte-colors-yellow-light: #ffefbe;
+	--criarte-colors-light:        #f1f1f1;
 
 	/* ─── Layout ────────────────────────────────────────────────── */
 	--criarte-layout-container: 1080px;

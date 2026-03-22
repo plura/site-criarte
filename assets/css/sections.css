@@ -303,7 +303,7 @@
 
 /* ─── CONTACTOS / FOOTER ─────────────────────────────────── */
 #contactos {
-	background: #fff;
+	background: var(--criarte-colors-light);
 	padding: 60px 6vw 80px;
 }
 
