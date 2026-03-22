@@ -142,10 +142,6 @@
 	aspect-ratio: 1;
 }
 
-.oficina-img-wrap--split {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
 
 .oficina-img {
 	width: 100%;
