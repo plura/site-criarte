@@ -364,6 +364,11 @@ p {
 	padding-right: var(--criarte-layout-pad-large);
 }
 
+.oficina-content .criarte-icon {
+	width: 100px;
+	margin-bottom: 1rem;
+}
+
 .oficina.reverse .oficina-content {
 	padding-right: var(--criarte-layout-pad);
 	padding-left: var(--criarte-layout-pad-large);
