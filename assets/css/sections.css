@@ -122,6 +122,14 @@
 	align-items: stretch;
 	min-height: 320px;
 	overflow: hidden;
+	max-width: var(--criarte-layout-container);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: calc(var(--criarte-layout-pad) / 2);
+}
+
+.oficina:last-child {
+	margin-bottom: 0;
 }
 
 .oficina-bg {
