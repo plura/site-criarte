@@ -122,10 +122,9 @@
 
 .oficina {
 	position: relative;
-	display: grid;
-	grid-template-columns: 1fr;
+	display: block;
 	overflow: hidden;
-	max-width: var(--criarte-layout-container);
+	max-width: min(var(--criarte-layout-width-mobile), var(--criarte-layout-container));
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: calc(var(--criarte-layout-pad) / 2);
@@ -337,7 +336,9 @@
 		display: flex;
 	}
 
+	/* Default: img-wrap left (1fr), content right (2fr) — natural DOM order */
 	.oficina {
+		display: grid;
 		grid-template-columns: 1fr 2fr;
 		align-items: stretch;
 	}
@@ -350,26 +351,19 @@
 		height: 100%;
 	}
 
-	/* Default: image left (col 1), content right (col 2) */
 	.oficina .oficina-content {
-		grid-column: 2;
-		grid-row: 1;
 		display: flex;
 		flex-direction: column;
 	}
 
-	.oficina .oficina-img-wrap {
-		grid-column: 1;
-		grid-row: 1;
-	}
-
-	/* Reverse: content left (col 1), image right (col 2) */
+	/* Reverse: content left (2fr), img-wrap right (1fr) — swap visual order */
 	.oficina.reverse {
 		grid-template-columns: 2fr 1fr;
 	}
 
-	.oficina.reverse .oficina-content  { grid-column: auto; }
-	.oficina.reverse .oficina-img-wrap { grid-column: auto; }
+	.oficina.reverse .oficina-content {
+		order: -1;
+	}
 
 	/* Push content to bottom for these oficinas */
 	.oficina-criativa .oficina-content,

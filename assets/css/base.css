@@ -21,9 +21,10 @@
 	--criarte-colors-light:        #f1f1f1;
 
 	/* ─── Layout ────────────────────────────────────────────────── */
-	--criarte-layout-container: 1080px;
-	--criarte-layout-pad:       6vw;
-	--criarte-layout-pad-large: max(var(--criarte-layout-pad), calc((100dvw - var(--criarte-layout-container)) / 2));
+	--criarte-layout-container:    1080px;
+	--criarte-layout-width-mobile: 90vw;
+	--criarte-layout-pad:          6vw;
+	--criarte-layout-pad-large:    max(var(--criarte-layout-pad), calc((100dvw - var(--criarte-layout-container)) / 2));
 
 	/* ─── Fonts: families ───────────────────────────────────── */
 	--criarte-fonts-heading: 'Nunito', sans-serif;
@@ -56,6 +57,7 @@
 	/* ─── Components ─────────────────────────────────────────── */
 	--criarte-team-member-photo-size: 220px;
 	--criarte-team-member-icon-size:  80px;
+	--criarte-oficina-icon-size:      200px;
 }
 
 /* ─── Base elements ──────────────────────────────────────── */
