@@ -29,9 +29,10 @@
 	flex-direction: column;
 	align-items: center;
 	font-family: var(--criarte-fonts-heading);
-	font-weight: 700;
-	font-size: 0.75rem;
+	font-weight: var(--criarte-fonts-weight-bold);
+	font-size: var(--criarte-fonts-size-xs);
 	letter-spacing: 0.04em;
+	text-transform: uppercase;
 	color: var(--criarte-colors-grey);
 	padding: 0 1.2rem;
 	gap: 6px;

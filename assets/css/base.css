@@ -22,9 +22,33 @@
 	--criarte-layout-pad:       6vw;
 	--criarte-layout-pad-large: max(var(--criarte-layout-pad), calc((100dvw - var(--criarte-layout-container)) / 2));
 
-	/* ─── Fonts ──────────────────────────────────────────────── */
+	/* ─── Fonts: families ───────────────────────────────────── */
 	--criarte-fonts-heading: 'Nunito', sans-serif;
 	--criarte-fonts-body:    'Nunito Sans', sans-serif;
+
+	/* ─── Fonts: sizes ───────────────────────────────────────── */
+	--criarte-fonts-size-xs:   0.75rem;
+	--criarte-fonts-size-sm:   0.9rem;
+	--criarte-fonts-size-base: 1rem;
+	--criarte-fonts-size-md:   1.1rem;
+	--criarte-fonts-size-lg:   1.8rem;
+	--criarte-fonts-size-h6:   1rem;
+	--criarte-fonts-size-h5:   1.1rem;
+	--criarte-fonts-size-h4:   1.3rem;
+	--criarte-fonts-size-h3:   clamp(1.6rem, 2.5vw, 2.5rem);
+	--criarte-fonts-size-h2:   clamp(2rem, 4vw, 3.5rem);
+	--criarte-fonts-size-h1:   clamp(2rem, 3.5vw, 3.8rem);
+
+	/* ─── Fonts: line heights ────────────────────────────────── */
+	--criarte-fonts-lh-tight:  1.1;
+	--criarte-fonts-lh-normal: 1.75;
+
+	/* ─── Fonts: weights ─────────────────────────────────────── */
+	--criarte-fonts-weight-normal:    400;
+	--criarte-fonts-weight-semibold:  600;
+	--criarte-fonts-weight-bold:      700;
+	--criarte-fonts-weight-extrabold: 800;
+	--criarte-fonts-weight-black:     900;
 }
 
 /* ─── Base elements ──────────────────────────────────────── */
@@ -34,9 +58,25 @@ html {
 
 body {
 	font-family: var(--criarte-fonts-body);
+	font-size: var(--criarte-fonts-size-base);
+	font-weight: var(--criarte-fonts-weight-normal);
+	line-height: var(--criarte-fonts-lh-normal);
 	color: var(--criarte-colors-text);
 	overflow-x: hidden;
 }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--criarte-fonts-heading);
+	font-weight: var(--criarte-fonts-weight-black);
+	line-height: var(--criarte-fonts-lh-tight);
+}
+
+h1 { font-size: var(--criarte-fonts-size-h1); }
+h2 { font-size: var(--criarte-fonts-size-h2); }
+h3 { font-size: var(--criarte-fonts-size-h3); }
+h4 { font-size: var(--criarte-fonts-size-h4); }
+h5 { font-size: var(--criarte-fonts-size-h5); }
+h6 { font-size: var(--criarte-fonts-size-h6); }
 
 img {
 	display: block;
