@@ -40,7 +40,7 @@
 
 #o-que-e .container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	gap: 4rem;
 	align-items: start;
 }
@@ -59,8 +59,8 @@
 }
 
 .o-que-e-visual {
+	display: none;
 	position: relative;
-	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	padding-top: 1rem;
@@ -136,8 +136,7 @@
 .oficina {
 	position: relative;
 	display: grid;
-	grid-template-columns: 1fr 2fr;
-	align-items: stretch;
+	grid-template-columns: 1fr;
 	overflow: hidden;
 	max-width: var(--criarte-layout-container);
 	margin-left: auto;
@@ -159,13 +158,11 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	aspect-ratio: 1;
 }
-
 
 .oficina-img {
 	width: 100%;
-	height: 100%;
+	height: 240px;
 	object-fit: cover;
 }
 
@@ -185,8 +182,18 @@
 
 .oficina-content .criarte-icon {
 	position: absolute;
-	width: 100px;
+	width: var(--criarte-oficina-icon-size);
 }
+
+/* Icon positions per oficina */
+.oficina-criativa .criarte-icon,
+.oficina-emocoes  .criarte-icon { top: 0; right: 0; }
+
+.oficina-cuidar   .criarte-icon,
+.oficina-historia .criarte-icon,
+.oficina-artes    .criarte-icon { bottom: 0; right: 0; }
+
+.oficina-escrita  .criarte-icon { top: 0; left: 0; }
 
 .oficina-title {
 	font-size: var(--criarte-fonts-size-h3);
@@ -220,17 +227,6 @@
 .oficina-emocoes .oficina-bg     { background: rgba(236, 147, 186, 0.2); }
 .oficina-emocoes .oficina-title  { color: var(--criarte-colors-pink); }
 
-/* Default: content right (col 2), image left (col 1) — same row */
-.oficina .oficina-content  { grid-column: 2; grid-row: 1; }
-.oficina .oficina-img-wrap { grid-column: 1; grid-row: 1; }
-
-/* Reverse: content left (col 1), image right (col 2) — natural DOM order */
-.oficina.reverse {
-	grid-template-columns: 2fr 1fr;
-}
-.oficina.reverse .oficina-content  { grid-column: auto; }
-.oficina.reverse .oficina-img-wrap { grid-column: auto; }
-
 /* ─── EVENTOS ────────────────────────────────────────────── */
 #eventos {
 	background: rgba(255, 204, 44, 0.099);
@@ -239,7 +235,7 @@
 
 #eventos .container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	gap: 4rem;
 	align-items: center;
 }
@@ -264,7 +260,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 360px;
+	height: 280px;
 }
 
 .eventos-triangle {
@@ -326,32 +322,62 @@
 	color: var(--criarte-colors-red);
 }
 
-/* ─── Responsive ─────────────────────────────────────────── */
-@media (max-width: 900px) {
+/* ─── Responsive (min-width: 768px) ──────────────────────── */
+@media (min-width: 768px) {
 	#o-que-e .container {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
+
 	.o-que-e-visual {
-		display: none;
+		display: flex;
 	}
+
 	.oficina {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 2fr;
+		align-items: stretch;
 	}
+
 	.oficina-img-wrap {
-		min-height: 240px;
+		aspect-ratio: 1;
 	}
+
 	.oficina-img {
-		height: 240px;
+		height: 100%;
 	}
-	.oficina .oficina-content,
+
+	/* Default: image left (col 1), content right (col 2) */
+	.oficina .oficina-content {
+		grid-column: 2;
+		grid-row: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.oficina .oficina-img-wrap {
-		grid-column: auto;
-		grid-row: auto;
+		grid-column: 1;
+		grid-row: 1;
 	}
+
+	/* Reverse: content left (col 1), image right (col 2) */
+	.oficina.reverse {
+		grid-template-columns: 2fr 1fr;
+	}
+
+	.oficina.reverse .oficina-content  { grid-column: auto; }
+	.oficina.reverse .oficina-img-wrap { grid-column: auto; }
+
+	/* Push content to bottom for these oficinas */
+	.oficina-criativa .oficina-content,
+	.oficina-escrita  .oficina-content,
+	.oficina-emocoes  .oficina-content {
+		justify-content: flex-end;
+	}
+
 	#eventos .container {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
+
 	.eventos-images {
-		height: 280px;
+		height: 360px;
 	}
 }

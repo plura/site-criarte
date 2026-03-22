@@ -19,7 +19,7 @@
 }
 
 .nav-links {
-	display: flex;
+	display: none;
 	gap: 0;
 	list-style: none;
 }
@@ -57,19 +57,20 @@
 .nav-links li:nth-child(5) a .nav-bar { background: var(--criarte-colors-pink); }
 
 .nav-hamburger {
-	display: none;
+	display: block;
 	background: none;
 	border: none;
 	cursor: pointer;
 	padding: 4px;
 }
 
-/* ─── Responsive ─────────────────────────────────────────── */
-@media (max-width: 900px) {
+/* ─── Responsive (min-width: 768px) ──────────────────────── */
+@media (min-width: 768px) {
 	.nav-links {
-		display: none;
+		display: flex;
 	}
+
 	.nav-hamburger {
-		display: block;
+		display: none;
 	}
 }

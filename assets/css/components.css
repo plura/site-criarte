@@ -39,7 +39,7 @@
 /* ─── Team member ────────────────────────────────────────── */
 .team-grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	gap: var(--criarte-layout-pad);
 	margin-top: 3rem;
 }
@@ -116,9 +116,9 @@
 	user-select: none;
 }
 
-/* ─── Responsive ─────────────────────────────────────────── */
-@media (max-width: 900px) {
+/* ─── Responsive (min-width: 768px) ──────────────────────── */
+@media (min-width: 768px) {
 	.team-grid {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 }
