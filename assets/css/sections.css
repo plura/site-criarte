@@ -118,9 +118,8 @@
 .oficina {
 	position: relative;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 2fr 1fr;
 	align-items: stretch;
-	min-height: 320px;
 	overflow: hidden;
 	max-width: var(--criarte-layout-container);
 	margin-left: auto;
@@ -142,6 +141,7 @@
 	position: relative;
 	z-index: 1;
 	display: flex;
+	aspect-ratio: 1;
 }
 
 .oficina-img-wrap--split {
@@ -169,17 +169,11 @@
 	position: relative;
 	z-index: 1;
 	padding: calc(var(--criarte-layout-pad) / 2) var(--criarte-layout-pad);
-	padding-right: var(--criarte-layout-pad-large);
 }
 
 .oficina-content .criarte-icon {
 	width: 100px;
 	margin-bottom: 1rem;
-}
-
-.oficina.reverse .oficina-content {
-	padding-right: var(--criarte-layout-pad);
-	padding-left: var(--criarte-layout-pad-large);
 }
 
 .oficina-title {
@@ -217,8 +211,11 @@
 .oficina-emocoes .oficina-title  { color: var(--criarte-colors-pink); }
 
 /* Reverse layout for odd rows */
-.oficina.reverse .oficina-img-wrap { order: 2; }
-.oficina.reverse .oficina-content  { order: 1; }
+.oficina.reverse {
+	grid-template-columns: 1fr 2fr;
+}
+.oficina.reverse .oficina-img-wrap { order: 1; }
+.oficina.reverse .oficina-content  { order: 2; }
 
 /* ─── EVENTOS ────────────────────────────────────────────── */
 #eventos {
