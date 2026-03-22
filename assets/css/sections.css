@@ -116,7 +116,7 @@
 .oficina {
 	position: relative;
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: auto auto;
 	align-items: stretch;
 	overflow: hidden;
 	max-width: var(--criarte-layout-container);
@@ -153,6 +153,7 @@
 	z-index: 1;
 	height: 100%;
 	width: 100%;
+	aspect-ratio: 1;
 	object-fit: cover;
 }
 
@@ -171,8 +172,8 @@
 }
 
 .oficina-content .criarte-icon {
+	position: absolute;
 	width: 100px;
-	margin-bottom: 1rem;
 }
 
 .oficina-title {
@@ -213,7 +214,7 @@
 
 /* Reverse: content left (col 1), image right (col 2) — natural DOM order */
 .oficina.reverse {
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: auto auto;
 }
 .oficina.reverse .oficina-content  { grid-column: auto; }
 .oficina.reverse .oficina-img-wrap { grid-column: auto; }
