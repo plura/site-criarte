@@ -171,17 +171,10 @@
 .oficina-content .criarte-icon {
 	position: absolute;
 	width: var(--criarte-oficina-icon-size);
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
-
-/* Icon positions per oficina */
-.oficina-criativa .criarte-icon,
-.oficina-emocoes  .criarte-icon { top: 0; right: 0; }
-
-.oficina-cuidar   .criarte-icon,
-.oficina-historia .criarte-icon,
-.oficina-artes    .criarte-icon { bottom: 0; right: 0; }
-
-.oficina-escrita  .criarte-icon { top: 0; left: 0; }
 
 .oficina-title {
 	font-size: var(--criarte-fonts-size-h3);
@@ -358,6 +351,22 @@
 		display: flex;
 		flex-direction: column;
 	}
+
+	/* Icon positions per oficina */
+	.oficina-content .criarte-icon {
+		bottom: auto;
+		left: auto;
+		transform: none;
+	}
+
+	.oficina-criativa .criarte-icon,
+	.oficina-emocoes  .criarte-icon { top: 0; right: 0; }
+
+	.oficina-cuidar   .criarte-icon,
+	.oficina-historia .criarte-icon,
+	.oficina-artes    .criarte-icon { bottom: 0; right: 0; }
+
+	.oficina-escrita  .criarte-icon { top: 0; left: 0; }
 
 	/* Reverse: content left (2fr), img-wrap right (1fr) — swap visual order */
 	.oficina.reverse {
