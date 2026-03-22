@@ -144,11 +144,12 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
+	aspect-ratio: 1;
 }
 
 .oficina-img {
 	width: 100%;
-	height: 240px;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -163,6 +164,7 @@
 .oficina-content {
 	position: relative;
 	z-index: 1;
+	aspect-ratio: 1;
 	padding: calc(var(--criarte-layout-pad) / 2) var(--criarte-layout-pad);
 }
 
@@ -352,6 +354,7 @@
 	}
 
 	.oficina .oficina-content {
+		aspect-ratio: auto;
 		display: flex;
 		flex-direction: column;
 	}
