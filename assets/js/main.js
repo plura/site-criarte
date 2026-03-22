@@ -17,6 +17,11 @@ if (hamburger && navLinks) {
 	});
 }
 
+/* ─── Lucide icons ──────────────────────────────────────── */
+if (typeof lucide !== 'undefined') {
+	lucide.createIcons();
+}
+
 /* ─── GSAP animations (placeholder) ────────────────────── */
 // GSAP is loaded via CDN — use gsap.* and ScrollTrigger.* here.
 // Example:
