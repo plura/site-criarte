@@ -116,7 +116,7 @@
 .oficina {
 	position: relative;
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 1fr 2fr;
 	align-items: stretch;
 	overflow: hidden;
 	max-width: var(--criarte-layout-container);
@@ -139,7 +139,6 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	height: 100%;
 	aspect-ratio: 1;
 }
 
@@ -149,11 +148,8 @@
 }
 
 .oficina-img {
-	position: relative;
-	z-index: 1;
-	height: 100%;
 	width: 100%;
-	aspect-ratio: 1;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -214,7 +210,7 @@
 
 /* Reverse: content left (col 1), image right (col 2) — natural DOM order */
 .oficina.reverse {
-	grid-template-columns: auto auto;
+	grid-template-columns: 2fr 1fr;
 }
 .oficina.reverse .oficina-content  { grid-column: auto; }
 .oficina.reverse .oficina-img-wrap { grid-column: auto; }
