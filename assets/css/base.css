@@ -1,0 +1,53 @@
+/* ─── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* ─── Design tokens ──────────────────────────────────────── */
+:root {
+	/* ─── Colors ─────────────────────────────────────────────── */
+	--criarte-colors-red:    #e4453d;
+	--criarte-colors-green:  #008e71;
+	--criarte-colors-blue:   #0077c2;
+	--criarte-colors-yellow: #ffcc2c;
+	--criarte-colors-pink:   #ec93ba;
+	--criarte-colors-orange: #f27c00;
+	--criarte-colors-grey:   #707070;
+	--criarte-colors-text:   #3a3a3a;
+
+	/* ─── Layout ────────────────────────────────────────────────── */
+	--criarte-layout-container: 1080px;
+	--criarte-layout-pad:       6vw;
+	--criarte-layout-pad-large: max(var(--criarte-layout-pad), calc((100dvw - var(--criarte-layout-container)) / 2));
+
+	/* ─── Fonts ──────────────────────────────────────────────── */
+	--criarte-fonts-heading: 'Nunito', sans-serif;
+	--criarte-fonts-body:    'Nunito Sans', sans-serif;
+}
+
+/* ─── Base elements ──────────────────────────────────────── */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--criarte-fonts-body);
+	color: var(--criarte-colors-text);
+	overflow-x: hidden;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	text-align: justify;
+}

@@ -1,0 +1,74 @@
+/* ─── NAV ────────────────────────────────────────────────── */
+#nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: #fff;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 4vw;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.nav-logo {
+	height: 48px;
+}
+
+.nav-links {
+	display: flex;
+	gap: 0;
+	list-style: none;
+}
+
+.nav-links li a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: var(--criarte-fonts-heading);
+	font-weight: 700;
+	font-size: 0.75rem;
+	letter-spacing: 0.04em;
+	color: var(--criarte-colors-grey);
+	padding: 0 1.2rem;
+	gap: 6px;
+	transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+	color: var(--criarte-colors-text);
+}
+
+.nav-links li a .nav-bar {
+	display: block;
+	height: 5px;
+	border-radius: 3px;
+	width: 100%;
+}
+
+.nav-links li:nth-child(1) a .nav-bar { background: var(--criarte-colors-red); }
+.nav-links li:nth-child(2) a .nav-bar { background: var(--criarte-colors-green); }
+.nav-links li:nth-child(3) a .nav-bar { background: var(--criarte-colors-blue); }
+.nav-links li:nth-child(4) a .nav-bar { background: var(--criarte-colors-yellow); }
+.nav-links li:nth-child(5) a .nav-bar { background: var(--criarte-colors-pink); }
+
+.nav-hamburger {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+	.nav-links {
+		display: none;
+	}
+	.nav-hamburger {
+		display: block;
+	}
+}

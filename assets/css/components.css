@@ -1,0 +1,119 @@
+/* ─── Container ──────────────────────────────────────────── */
+.container {
+	max-width: var(--criarte-layout-container);
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* ─── Section title with coloured underline ─────────────── */
+.section-title {
+	display: inline-block;
+	font-family: var(--criarte-fonts-heading);
+	font-weight: 900;
+	font-size: clamp(2rem, 4vw, 3.5rem);
+	line-height: 1;
+	padding-bottom: 10px;
+	margin-bottom: 2rem;
+}
+
+.section-title::after {
+	content: '';
+	display: block;
+	height: 6px;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+
+.section-title.red    { color: var(--criarte-colors-red);    }
+.section-title.red::after    { background: var(--criarte-colors-red);    }
+.section-title.green  { color: var(--criarte-colors-green);  }
+.section-title.green::after  { background: var(--criarte-colors-green);  }
+.section-title.blue   { color: var(--criarte-colors-blue);   }
+.section-title.blue::after   { background: var(--criarte-colors-blue);   }
+.section-title.yellow { color: var(--criarte-colors-yellow); }
+.section-title.yellow::after { background: var(--criarte-colors-yellow); }
+.section-title.pink   { color: var(--criarte-colors-pink);   }
+.section-title.pink::after   { background: var(--criarte-colors-pink);   }
+
+/* ─── Team member ────────────────────────────────────────── */
+.team-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--criarte-layout-pad);
+	margin-top: 3rem;
+}
+
+.team-member {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
+}
+
+.team-member-photo {
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.team-member-icon {
+	width: 80px;
+}
+
+.team-member-name {
+	font-family: var(--criarte-fonts-heading);
+	font-weight: 800;
+	font-size: 1.1rem;
+	color: var(--criarte-colors-text);
+}
+
+.team-member-description p {
+	font-size: 0.9rem;
+	line-height: 1.7;
+	color: var(--criarte-colors-grey);
+	max-width: 440px;
+}
+
+/* ─── Social links ───────────────────────────────────────── */
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.social-links a {
+	color: var(--criarte-colors-grey);
+	transition: color 0.2s;
+}
+
+.social-links a:hover {
+	color: var(--criarte-colors-pink);
+}
+
+.social-links svg {
+	width: 28px;
+	height: 28px;
+	stroke-width: 1.5;
+}
+
+/* ─── Decorative elements ────────────────────────────────── */
+.deco {
+	position: absolute;
+	pointer-events: none;
+}
+
+.deco-abs {
+	position: absolute;
+	pointer-events: none;
+	user-select: none;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+	.team-grid {
+		grid-template-columns: 1fr;
+	}
+}
