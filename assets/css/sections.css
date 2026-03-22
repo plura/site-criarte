@@ -89,22 +89,9 @@
 	padding: 80px 6vw;
 }
 
-#quem-somos::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: var(--criarte-colors-green-light);
-	clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
-	z-index: -1;
-}
-
+#quem-somos::before,
 #quem-somos::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: var(--criarte-colors-yellow-light);
-	clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
-	z-index: -1;
+	content: none;
 }
 
 #quem-somos .container {
@@ -324,6 +311,24 @@
 
 /* ─── Responsive (min-width: 768px) ──────────────────────── */
 @media (min-width: 768px) {
+	#quem-somos::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: var(--criarte-colors-green-light);
+		clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+		z-index: -1;
+	}
+
+	#quem-somos::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: var(--criarte-colors-yellow-light);
+		clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+		z-index: -1;
+	}
+
 	#o-que-e .container {
 		grid-template-columns: 1fr 1fr;
 	}
