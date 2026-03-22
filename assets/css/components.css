@@ -45,6 +45,7 @@
 }
 
 .team-member {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -53,14 +54,17 @@
 }
 
 .team-member-photo {
-	width: 220px;
-	height: 220px;
+	width: var(--criarte-team-member-photo-size);
+	height: var(--criarte-team-member-photo-size);
 	border-radius: 50%;
 	object-fit: cover;
 }
 
 .team-member-icon {
-	width: 80px;
+	position: absolute;
+	width: var(--criarte-team-member-icon-size);
+	top:  calc(var(--criarte-team-member-photo-size) / 2 - var(--criarte-team-member-icon-size) / 2);
+	left: calc(50% + var(--criarte-team-member-photo-size) / 2 - var(--criarte-team-member-icon-size) / 2);
 }
 
 .team-member-name {
