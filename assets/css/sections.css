@@ -1,6 +1,11 @@
+/* ─── Scroll offset for fixed nav ───────────────────────── */
+section, footer {
+	scroll-margin-top: var(--criarte-nav-height);
+}
+
 /* ─── HERO ───────────────────────────────────────────────── */
 #hero {
-	margin-top: 80px;
+	margin-top: var(--criarte-nav-height);
 	position: relative;
 	width: 100%;
 	height: 580px;

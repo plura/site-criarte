@@ -21,6 +21,7 @@
 	--criarte-colors-light:        #f1f1f1;
 
 	/* ─── Layout ────────────────────────────────────────────────── */
+	--criarte-nav-height:          80px;
 	--criarte-layout-container:    1080px;
 	--criarte-layout-width-mobile: 90vw;
 	--criarte-layout-pad:          6vw;
