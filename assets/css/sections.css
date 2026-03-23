@@ -46,7 +46,7 @@ section, footer {
 #o-que-e .container {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 4rem;
+	gap: calc(var(--criarte-layout-pad) / 2);
 	align-items: start;
 }
 
@@ -234,7 +234,7 @@ section, footer {
 #eventos .container {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 4rem;
+	gap: calc(var(--criarte-layout-pad) / 2);
 	align-items: center;
 }
 
@@ -258,31 +258,43 @@ section, footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 280px;
+	height: 60vw;
 }
 
 .eventos-triangle {
-	width: 260px;
+	width: 13vw;
 	position: absolute;
-	left: -20px;
+	left: 0;
 	bottom: 0;
 }
 
 .eventos-circle {
-	width: 200px;
+	width: 10vw;
 	position: absolute;
-	left: 50%;
-	top: 50%;
+	left: calc(40% + 4px);
+	top: 72%;
 	transform: translate(-50%, -50%);
 	z-index: 2;
 }
 
 .eventos-rect {
-	width: 280px;
+	width: 18vw;
 	position: absolute;
-	right: -20px;
-	top: 10px;
+	right: 0;
+	bottom: 0;
 }
+
+/* Eventos deco icons */
+.eventos-images .criarte-icon {
+	position: absolute;
+	width: 4vw;
+}
+
+.eventos-images .criarte-icon1 { width: 6vw; }
+
+.eventos-images .criarte-icon1 { bottom: 0;  left: 0; }
+.eventos-images .criarte-icon2 { top: 0;     right: 4vw; }
+.eventos-images .criarte-icon3 { top: calc(32% - 5px); left: 44%; width: 4.5vw; transform: translateX(-50%); }
 
 /* ─── CONTACTOS / FOOTER ─────────────────────────────────── */
 #contactos {
@@ -405,11 +417,11 @@ section, footer {
 	}
 
 	#eventos .container {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 2fr;
 	}
 
 	.eventos-images {
-		height: 360px;
+		height: 22vw;
 	}
 }
 
