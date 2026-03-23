@@ -1,23 +1,14 @@
 /* ─── Cri.ar.te — Global JS ─────────────────────────────── */
 
+import { initNav }                 from './nav.js';
 import { animate, animateStagger } from './animate.js';
 import { animations }              from './animation-map.js';
 
-/* ─── Nav: mobile menu toggle ──────────────────────────── */
+/* ─── Nav ───────────────────────────────────────────────── */
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks  = document.querySelector('.nav-links');
 
-if (hamburger && navLinks) {
-	hamburger.addEventListener('click', () => {
-		navLinks.classList.toggle('is-open');
-	});
-
-	navLinks.querySelectorAll('a').forEach(link => {
-		link.addEventListener('click', () => {
-			navLinks.classList.remove('is-open');
-		});
-	});
-}
+if (hamburger && navLinks) initNav(hamburger, navLinks);
 
 /* ─── GSAP ──────────────────────────────────────────────── */
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -35,7 +26,7 @@ gsap.from(heroSplit.words, {
 
 /* ─── Scroll-triggered reveals (from animation map) ─────── */
 animations.forEach(({ selector, from, stagger, trigger }) => {
-	if (stagger) {
+	if (stagger !== undefined) {
 		animateStagger(selector, from, stagger, trigger);
 	} else {
 		animate(selector, from, trigger);

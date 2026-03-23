@@ -13,6 +13,7 @@ export const animations = [
 	{
 		selector: '.section-title',
 		from:     { opacity: 0, x: -30, duration: 0.6, ease: 'power2.out' },
+		stagger:  0,
 	},
 
 	/* ─── O que é ─────────────────────────────────────────── */
