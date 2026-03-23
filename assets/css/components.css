@@ -63,8 +63,8 @@
 .team-member-icon {
 	position: absolute;
 	width: var(--criarte-team-member-icon-size);
-	top:  calc(var(--criarte-team-member-photo-size) / 2 - var(--criarte-team-member-icon-size) / 2);
-	left: calc(50% + var(--criarte-team-member-photo-size) / 2 - var(--criarte-team-member-icon-size) / 2);
+	top:  calc(var(--criarte-team-member-photo-size) / 2 * (1 + sin(45deg)) - var(--criarte-team-member-icon-size) / 2);
+	left: calc(50% + var(--criarte-team-member-photo-size) / 2 * cos(45deg) - var(--criarte-team-member-icon-size) / 2);
 }
 
 .team-member-name {
