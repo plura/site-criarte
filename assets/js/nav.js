@@ -7,14 +7,13 @@ function scrollToHash(hash) {
 
 function initActiveNavLink(navLinks) {
 	const sections = document.querySelectorAll('section[id], footer[id]');
-	const navItems = navLinks.querySelectorAll('a');
 
 	const observer = new IntersectionObserver(entries => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				navItems.forEach(a => a.classList.remove('active'));
-				const active = navLinks.querySelector(`a[href="#${entry.target.id}"]`);
-				if (active) active.classList.add('active');
+				navLinks.querySelectorAll('.nav-link').forEach(li => li.classList.remove('active'));
+				const activeLink = navLinks.querySelector(`a[href="#${entry.target.id}"]`);
+				if (activeLink) activeLink.closest('.nav-link').classList.add('active');
 			}
 		});
 	}, { rootMargin: '-40% 0px -55% 0px' });
