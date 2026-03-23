@@ -56,7 +56,7 @@
 	--criarte-fonts-weight-black:     900;
 
 	/* ─── Components ─────────────────────────────────────────── */
-	--criarte-team-member-photo-size: 220px;
+	--criarte-team-member-photo-size: 10vw;
 	--criarte-team-member-icon-size:  5vw;
 	--criarte-oficina-icon-size:      200px;
 }
