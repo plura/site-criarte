@@ -40,7 +40,7 @@
 .team-grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: var(--criarte-layout-pad);
+	gap: calc(var(--criarte-layout-pad) * 2);
 	margin-top: 3rem;
 }
 

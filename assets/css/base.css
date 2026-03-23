@@ -24,8 +24,8 @@
 	--criarte-nav-height:          80px;
 	--criarte-layout-container:    1080px;
 	--criarte-layout-width-mobile: 90vw;
-	--criarte-layout-pad:          6vw;
-	--criarte-layout-pad-large:    max(var(--criarte-layout-pad), calc((100dvw - var(--criarte-layout-container)) / 2));
+	--criarte-layout-pad:          3vw;
+	--criarte-layout-pad-large:    max(calc(var(--criarte-layout-pad) * 2), calc((100dvw - var(--criarte-layout-container)) / 2));
 
 	/* ─── Fonts: families ───────────────────────────────────── */
 	--criarte-fonts-heading: 'Nunito', sans-serif;

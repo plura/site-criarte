@@ -27,7 +27,7 @@ section, footer {
 
 .hero-text {
 	position: absolute;
-	right: 6vw;
+	right: calc(var(--criarte-layout-pad) * 2);
 	top: 50%;
 	transform: translateY(-50%);
 	text-align: right;
@@ -40,7 +40,7 @@ section, footer {
 
 /* ─── O QUE É ───────────────────────────────────────────── */
 #o-que-e {
-	padding: 80px 6vw;
+	padding: 80px calc(var(--criarte-layout-pad) * 2);
 }
 
 #o-que-e .container {
@@ -91,7 +91,7 @@ section, footer {
 	position: relative;
 	isolation: isolate;
 	background: rgba(0, 142, 113, 0.099);
-	padding: 80px 6vw;
+	padding: 80px calc(var(--criarte-layout-pad) * 2);
 }
 
 #quem-somos::before,
@@ -121,7 +121,7 @@ section, footer {
 
 #oficinas .section-header {
 	text-align: center;
-	padding: 0 6vw;
+	padding: 0 calc(var(--criarte-layout-pad) * 2);
 	margin-bottom: 3rem;
 }
 
@@ -132,7 +132,7 @@ section, footer {
 	max-width: min(var(--criarte-layout-width-mobile), var(--criarte-layout-container));
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: calc(var(--criarte-layout-pad) / 2);
+	margin-bottom: var(--criarte-layout-pad);
 }
 
 .oficina:last-child {
@@ -170,7 +170,7 @@ section, footer {
 	position: relative;
 	z-index: 1;
 	aspect-ratio: 1;
-	padding: calc(var(--criarte-layout-pad) / 2) var(--criarte-layout-pad);
+	padding: var(--criarte-layout-pad) calc(var(--criarte-layout-pad) * 2);
 }
 
 .oficina-content .criarte-icon {
@@ -216,7 +216,7 @@ section, footer {
 /* ─── EVENTOS ────────────────────────────────────────────── */
 #eventos {
 	background: rgba(255, 204, 44, 0.099);
-	padding: 80px 6vw;
+	padding: 80px calc(var(--criarte-layout-pad) * 2);
 }
 
 #eventos .container {
@@ -286,7 +286,7 @@ section, footer {
 /* ─── CONTACTOS / FOOTER ─────────────────────────────────── */
 #contactos {
 	background: var(--criarte-colors-light);
-	padding: 60px 6vw 80px;
+	padding: 60px calc(var(--criarte-layout-pad) * 2) 80px;
 }
 
 #contactos .container {
