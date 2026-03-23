@@ -76,7 +76,7 @@ export const animations = [
 	{
 		selector: '.social-links',
 		from:     { opacity: 0, y: 20, duration: 0.5, ease: 'power1.out' },
-		trigger:  { start: 'top 90%' },
+		trigger:  { trigger: '#contactos', start: 'top 80%' },
 	},
 
 ];
