@@ -395,11 +395,11 @@ section, footer {
 	.oficina-historia .oficina-content,
 	.oficina-artes    .oficina-content,
 	.oficina-emocoes  .oficina-content {
-		padding-right: calc(var(--criarte-layout-pad) * 2);
+		padding-right: calc(var(--criarte-layout-pad) * 3);
 	}
 
 	.oficina-escrita .oficina-content {
-		padding-left: calc(var(--criarte-layout-pad) * 2);
+		padding-left: calc(var(--criarte-layout-pad) * 3);
 	}
 
 	#eventos .container {
@@ -419,10 +419,10 @@ section, footer {
 	.oficina-historia .oficina-content,
 	.oficina-artes    .oficina-content,
 	.oficina-emocoes  .oficina-content {
-		padding-right: calc(var(--criarte-layout-pad) * 3);
+		padding-right: calc(var(--criarte-layout-pad) * 4);
 	}
 
 	.oficina-escrita .oficina-content {
-		padding-left: calc(var(--criarte-layout-pad) * 3);
+		padding-left: calc(var(--criarte-layout-pad) * 4);
 	}
 }
