@@ -47,6 +47,9 @@ gsap.utils.toArray('.oficina').forEach(oficina => {
 	if (icon)  gsap.from(icon,  { opacity: 0, scale: 0.7,  duration: 0.4, ease: 'back.out(2)', delay: 0.5, scrollTrigger: trigger });
 });
 
+/* ─── Recalculate positions after all assets load ───────── */
+window.addEventListener('load', () => ScrollTrigger.refresh());
+
 /* ─── Floating ambient: all decorative icons ────────────── */
 gsap.utils.toArray('.criarte-icon').forEach((el, i) => {
 	gsap.to(el, {
