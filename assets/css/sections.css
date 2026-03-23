@@ -262,14 +262,14 @@ section, footer {
 }
 
 .eventos-triangle {
-	width: 13vw;
+	width: 33%;
 	position: absolute;
 	left: 0;
-	bottom: 0;
+	bottom: 2%;
 }
 
 .eventos-circle {
-	width: 10vw;
+	width: 31%;
 	position: absolute;
 	left: calc(40% + 4px);
 	top: 72%;
@@ -278,7 +278,7 @@ section, footer {
 }
 
 .eventos-rect {
-	width: 18vw;
+	width: 47%;
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -287,14 +287,12 @@ section, footer {
 /* Eventos deco icons */
 .eventos-images .criarte-icon {
 	position: absolute;
-	width: 4vw;
+	width: 11.5%;
 }
 
-.eventos-images .criarte-icon1 { width: 6vw; }
-
-.eventos-images .criarte-icon1 { bottom: 0;  left: 0; }
-.eventos-images .criarte-icon2 { top: 0;     right: 4vw; }
-.eventos-images .criarte-icon3 { top: calc(32% - 5px); left: 44%; width: 4.5vw; transform: translateX(-50%); }
+.eventos-images .criarte-icon1 { width: 17%; bottom: 0; left: 0; }
+.eventos-images .criarte-icon2 { top: -1%;   right: 7%; width: 14.5%; }
+.eventos-images .criarte-icon3 { top: calc(24% - 5px); left: 44%; width: 16%; transform: translateX(-50%); }
 
 /* ─── CONTACTOS / FOOTER ─────────────────────────────────── */
 #contactos {
