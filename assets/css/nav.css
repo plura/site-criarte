@@ -20,8 +20,24 @@
 
 .nav-links {
 	display: none;
-	gap: 0;
 	list-style: none;
+}
+
+.nav-links.is-open {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 80px;
+	left: 0;
+	right: 0;
+	background: #fff;
+	padding: 0.5rem 0 1rem;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.nav-links.is-open li a {
+	justify-content: flex-start;
+	padding: 0.6rem 4vw;
 }
 
 .nav-links li a {
@@ -64,10 +80,19 @@
 	padding: 4px;
 }
 
-/* ─── Responsive (min-width: 768px) ──────────────────────── */
-@media (min-width: 768px) {
+/* ─── Laptop and above (min-width: 1024px) ───────────────── */
+@media (min-width: 1024px) {
 	.nav-links {
 		display: flex;
+		flex-direction: row;
+		gap: 0;
+		position: static;
+		box-shadow: none;
+		padding: 0;
+	}
+
+	.nav-links li a {
+		padding: 0 1.2rem;
 	}
 
 	.nav-hamburger {
