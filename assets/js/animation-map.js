@@ -54,18 +54,6 @@ export const animations = [
 		from:     { opacity: 0, x: 60, duration: 0.7, ease: 'power2.out' },
 		stagger:  0,
 	},
-	{
-		selector: '.oficina-img',
-		from:     { opacity: 0, scale: 0.95, duration: 0.6, ease: 'power2.out' },
-	},
-	{
-		selector: '.oficina-title',
-		from:     { opacity: 0, y: 15, duration: 0.5, ease: 'power1.out' },
-	},
-	{
-		selector: '.oficina-content .criarte-icon',
-		from:     { opacity: 0, scale: 0.7, duration: 0.4, ease: 'back.out(2)' },
-	},
 
 	/* ─── Eventos ─────────────────────────────────────────── */
 	{
