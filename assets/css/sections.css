@@ -160,22 +160,22 @@ section, footer {
 }
 
 .hexagon-clip {
-	width: 28vw;
-	right: -2vw;
+	position: absolute;
+	right: -8%;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
-.o-que-e-visual .criarte-icon2 {
-	width: 5.5vw;
-	top: calc(50% + 5vw);
-	left: calc(100% - 26vw);
+.o-que-e-visual .criarte-icon1 {
+	width: 22%;
+	top: calc(50% + 10%);
+	left: 8%;
 }
 
-.o-que-e-visual .criarte-icon3 {
-	width: 6vw;
-	top: calc(50% + 8vw);
-	left: calc(100% - 22vw);
+.o-que-e-visual .criarte-icon2 {
+	width: 24%;
+	top: calc(50% + 20%);
+	left: 20%;
 }
 
 .oficina-content {
