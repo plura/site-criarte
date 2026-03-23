@@ -56,8 +56,8 @@
 	--criarte-fonts-weight-black:     900;
 
 	/* ─── Components ─────────────────────────────────────────── */
-	--criarte-team-member-photo-size: 10vw;
-	--criarte-team-member-icon-size:  5vw;
+	--criarte-team-member-photo-size: 35vw;
+	--criarte-team-member-icon-size:  15vw;
 	--criarte-oficina-icon-size:      35vw;
 }
 
@@ -105,7 +105,9 @@ p {
 /* ─── Responsive (min-width: 768px) ──────────────────────── */
 @media (min-width: 768px) {
 	:root {
-		--criarte-layout-pad:         3vw;
-		--criarte-oficina-icon-size:  200px;
+		--criarte-layout-pad:              3vw;
+		--criarte-oficina-icon-size:       200px;
+		--criarte-team-member-photo-size:  10vw;
+		--criarte-team-member-icon-size:   5vw;
 	}
 }

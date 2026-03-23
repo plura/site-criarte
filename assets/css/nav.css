@@ -14,8 +14,9 @@
 	box-shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
 
-.nav-logo {
-	height: 48px;
+.nav-logo,
+.nav-hamburger img {
+	height: 35px;
 }
 
 .nav-links {
@@ -93,6 +94,10 @@
 
 	.nav-links li a {
 		padding: 0 1.2rem;
+	}
+
+	.nav-logo {
+		height: 48px;
 	}
 
 	.nav-hamburger {
