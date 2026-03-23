@@ -23,8 +23,8 @@
 	/* ─── Layout ────────────────────────────────────────────────── */
 	--criarte-nav-height:          80px;
 	--criarte-layout-container:    1080px;
-	--criarte-layout-width-mobile: 90vw;
-	--criarte-layout-pad:          3vw;
+	--criarte-layout-pad:          5vw;
+	--criarte-layout-width-mobile: calc(100vw - var(--criarte-layout-pad) * 2);
 	--criarte-layout-pad-large:    max(calc(var(--criarte-layout-pad) * 2), calc((100dvw - var(--criarte-layout-container)) / 2));
 
 	/* ─── Fonts: families ───────────────────────────────────── */
@@ -58,7 +58,7 @@
 	/* ─── Components ─────────────────────────────────────────── */
 	--criarte-team-member-photo-size: 10vw;
 	--criarte-team-member-icon-size:  5vw;
-	--criarte-oficina-icon-size:      200px;
+	--criarte-oficina-icon-size:      35vw;
 }
 
 /* ─── Base elements ──────────────────────────────────────── */
@@ -100,4 +100,12 @@ a {
 
 p {
 	text-align: justify;
+}
+
+/* ─── Responsive (min-width: 768px) ──────────────────────── */
+@media (min-width: 768px) {
+	:root {
+		--criarte-layout-pad:         3vw;
+		--criarte-oficina-icon-size:  200px;
+	}
 }
