@@ -25,6 +25,8 @@
 	margin-top: 10px;
 }
 
+.section-header.centered { text-align: center; }
+
 .section-title.red    { color: var(--criarte-colors-red);    }
 .section-title.red::after    { background: var(--criarte-colors-red);    }
 .section-title.green  { color: var(--criarte-colors-green);  }

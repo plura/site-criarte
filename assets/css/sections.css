@@ -94,20 +94,7 @@ section, footer {
 	content: none;
 }
 
-#quem-somos .container {
-	max-width: var(--criarte-layout-container);
-	margin: 0 auto;
-}
 
-#quem-somos .container .section-title {
-	display: block;
-	text-align: center;
-}
-
-#quem-somos .container .section-title::after {
-	margin: 10px auto 0;
-	width: 80%;
-}
 
 /* ─── AS NOSSAS OFICINAS ─────────────────────────────────── */
 #oficinas {
