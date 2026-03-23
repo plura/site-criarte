@@ -8,7 +8,7 @@ section, footer {
 	margin-top: var(--criarte-nav-height);
 	position: relative;
 	width: 100%;
-	height: 580px;
+	height: 400px;
 	overflow: hidden;
 }
 
@@ -40,7 +40,7 @@ section, footer {
 
 /* ─── O QUE É ───────────────────────────────────────────── */
 #o-que-e {
-	padding: 80px calc(var(--criarte-layout-pad) * 2);
+	padding: var(--criarte-section-pad-v) calc(var(--criarte-layout-pad) * 2);
 }
 
 #o-que-e .container {
@@ -86,7 +86,7 @@ section, footer {
 	position: relative;
 	isolation: isolate;
 	background: rgba(0, 142, 113, 0.099);
-	padding: 80px calc(var(--criarte-layout-pad) * 2);
+	padding: var(--criarte-section-pad-v) calc(var(--criarte-layout-pad) * 2);
 }
 
 #quem-somos::before,
@@ -98,7 +98,7 @@ section, footer {
 
 /* ─── AS NOSSAS OFICINAS ─────────────────────────────────── */
 #oficinas {
-	padding: 80px 0;
+	padding: var(--criarte-section-pad-v) 0;
 }
 
 #oficinas .section-header {
@@ -190,28 +190,28 @@ section, footer {
 }
 
 /* Per-oficina colour tints & title colours */
-.oficina-criativa .oficina-bg    { background: rgba(255, 204, 44, 0.2); }
+.oficina-criativa .oficina-bg    { background: color-mix(in srgb, var(--criarte-colors-yellow) 20%, transparent); }
 .oficina-criativa .oficina-title { color: var(--criarte-colors-yellow); }
 
-.oficina-cuidar .oficina-bg      { background: rgba(0, 142, 113, 0.2); }
+.oficina-cuidar .oficina-bg      { background: color-mix(in srgb, var(--criarte-colors-green)  20%, transparent); }
 .oficina-cuidar .oficina-title   { color: var(--criarte-colors-green); }
 
-.oficina-historia .oficina-bg    { background: rgba(228, 69, 61, 0.2); }
+.oficina-historia .oficina-bg    { background: color-mix(in srgb, var(--criarte-colors-red)    20%, transparent); }
 .oficina-historia .oficina-title { color: var(--criarte-colors-red); }
 
-.oficina-escrita .oficina-bg     { background: rgba(0, 119, 194, 0.2); }
+.oficina-escrita .oficina-bg     { background: color-mix(in srgb, var(--criarte-colors-blue)   20%, transparent); }
 .oficina-escrita .oficina-title  { color: var(--criarte-colors-blue); }
 
-.oficina-artes .oficina-bg       { background: rgba(242, 124, 0, 0.2); }
+.oficina-artes .oficina-bg       { background: color-mix(in srgb, var(--criarte-colors-orange) 20%, transparent); }
 .oficina-artes .oficina-title    { color: var(--criarte-colors-orange); }
 
-.oficina-emocoes .oficina-bg     { background: rgba(236, 147, 186, 0.2); }
+.oficina-emocoes .oficina-bg     { background: color-mix(in srgb, var(--criarte-colors-pink)   20%, transparent); }
 .oficina-emocoes .oficina-title  { color: var(--criarte-colors-pink); }
 
 /* ─── EVENTOS ────────────────────────────────────────────── */
 #eventos {
 	background: rgba(255, 204, 44, 0.099);
-	padding: 80px calc(var(--criarte-layout-pad) * 2);
+	padding: var(--criarte-section-pad-v) calc(var(--criarte-layout-pad) * 2);
 }
 
 #eventos .container {
@@ -278,7 +278,7 @@ section, footer {
 /* ─── CONTACTOS / FOOTER ─────────────────────────────────── */
 #contactos {
 	background: var(--criarte-colors-light);
-	padding: 60px calc(var(--criarte-layout-pad) * 2) 80px;
+	padding: var(--criarte-section-pad-v) calc(var(--criarte-layout-pad) * 2);
 }
 
 #contactos .container {
@@ -302,6 +302,10 @@ section, footer {
 
 /* ─── Responsive (min-width: 768px) ──────────────────────── */
 @media (min-width: 768px) {
+	#hero {
+		height: 580px;
+	}
+
 	#quem-somos::before {
 		content: '';
 		position: absolute;

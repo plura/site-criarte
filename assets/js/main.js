@@ -14,15 +14,17 @@ if (hamburger && navLinks) initNav(hamburger, navLinks);
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 /* ─── Hero: word-by-word reveal on load ─────────────────── */
-const heroSplit = new SplitText('.hero-text', { type: 'words' });
-
-gsap.from(heroSplit.words, {
-	opacity:  0,
-	y:        20,
-	duration: 0.5,
-	ease:     'power2.out',
-	stagger:  0.08,
-});
+const heroEl = document.querySelector('.hero-text');
+if (heroEl) {
+	const heroSplit = new SplitText(heroEl, { type: 'words' });
+	gsap.from(heroSplit.words, {
+		opacity:  0,
+		y:        20,
+		duration: 0.5,
+		ease:     'power2.out',
+		stagger:  0.08,
+	});
+}
 
 /* ─── Scroll-triggered reveals (from animation map) ─────── */
 animations.forEach(({ selector, from, stagger, trigger }) => {
@@ -36,21 +38,13 @@ animations.forEach(({ selector, from, stagger, trigger }) => {
 /* ─── Oficina children: triggered by parent ─────────────── */
 gsap.utils.toArray('.oficina').forEach(oficina => {
 	const trigger = { trigger: oficina, start: 'top 80%', once: true };
+	const img   = oficina.querySelector('.oficina-img');
+	const title = oficina.querySelector('.oficina-title');
+	const icon  = oficina.querySelector('.criarte-icon');
 
-	gsap.from(oficina.querySelector('.oficina-img'), {
-		opacity: 0, scale: 0.95, duration: 0.6, ease: 'power2.out',
-		delay: 0.2, scrollTrigger: trigger,
-	});
-
-	gsap.from(oficina.querySelector('.oficina-title'), {
-		opacity: 0, y: 15, duration: 0.5, ease: 'power1.out',
-		delay: 0.35, scrollTrigger: trigger,
-	});
-
-	gsap.from(oficina.querySelector('.criarte-icon'), {
-		opacity: 0, scale: 0.7, duration: 0.4, ease: 'back.out(2)',
-		delay: 0.5, scrollTrigger: trigger,
-	});
+	if (img)   gsap.from(img,   { opacity: 0, scale: 0.95, duration: 0.6, ease: 'power2.out', delay: 0.2,  scrollTrigger: trigger });
+	if (title) gsap.from(title, { opacity: 0, y: 15,       duration: 0.5, ease: 'power1.out', delay: 0.35, scrollTrigger: trigger });
+	if (icon)  gsap.from(icon,  { opacity: 0, scale: 0.7,  duration: 0.4, ease: 'back.out(2)', delay: 0.5, scrollTrigger: trigger });
 });
 
 /* ─── Floating ambient: all decorative icons ────────────── */

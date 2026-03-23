@@ -55,6 +55,9 @@
 	--criarte-fonts-weight-extrabold: 800;
 	--criarte-fonts-weight-black:     900;
 
+	/* ─── Spacing ────────────────────────────────────────────── */
+	--criarte-section-pad-v: 40px;
+
 	/* ─── Components ─────────────────────────────────────────── */
 	--criarte-team-member-photo-size: 35vw;
 	--criarte-team-member-icon-size:  15vw;
@@ -102,10 +105,19 @@ p {
 	text-align: justify;
 }
 
+/* ─── Focus visible ──────────────────────────────────────── */
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--criarte-colors-text);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
 /* ─── Responsive (min-width: 768px) ──────────────────────── */
 @media (min-width: 768px) {
 	:root {
 		--criarte-layout-pad:              3vw;
+		--criarte-section-pad-v:           80px;
 		--criarte-oficina-icon-size:       200px;
 		--criarte-team-member-photo-size:  10vw;
 		--criarte-team-member-icon-size:   5vw;
