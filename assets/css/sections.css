@@ -51,15 +51,13 @@ section, footer {
 }
 
 .o-que-e-text p {
-	font-size: 1rem;
-	line-height: 1.75;
 	color: var(--criarte-colors-grey);
 	margin-bottom: 1.2em;
 }
 
 .o-que-e-text p:last-child {
 	font-weight: 700;
-	font-size: 1.1rem;
+	font-size: var(--criarte-fonts-size-md);
 	color: var(--criarte-colors-text);
 }
 
@@ -200,8 +198,6 @@ section, footer {
 }
 
 .oficina-text {
-	font-size: 0.95rem;
-	line-height: 1.75;
 	color: var(--criarte-colors-grey);
 	max-width: 480px;
 }
@@ -239,8 +235,6 @@ section, footer {
 }
 
 .eventos-text p {
-	font-size: 1rem;
-	line-height: 1.75;
 	color: var(--criarte-colors-grey);
 	margin-bottom: 1.5rem;
 	max-width: 480px;
@@ -249,7 +243,7 @@ section, footer {
 .fale-connosco {
 	font-family: var(--criarte-fonts-heading);
 	font-weight: 800;
-	font-size: 1.8rem;
+	font-size: var(--criarte-fonts-size-lg);
 	color: var(--criarte-colors-text);
 }
 

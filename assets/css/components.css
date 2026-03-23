@@ -71,13 +71,13 @@
 .team-member-name {
 	font-family: var(--criarte-fonts-heading);
 	font-weight: 800;
-	font-size: 1.1rem;
+	font-size: var(--criarte-fonts-size-md);
 	color: var(--criarte-colors-text);
 }
 
-.team-member-description p {
-	font-size: 0.9rem;
-	line-height: 1.7;
+.team-member-description {
+	font-size: var(--criarte-fonts-size-sm);
+	line-height: var(--criarte-fonts-lh-normal);
 	color: var(--criarte-colors-grey);
 	max-width: 440px;
 }
