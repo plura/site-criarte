@@ -57,6 +57,7 @@ gsap.utils.toArray('.oficina').forEach(oficina => {
 gsap.utils.toArray('.criarte-icon').forEach((el, i) => {
 	gsap.to(el, {
 		y:        i % 2 === 0 ? -14 : 14,
+		rotation: i % 2 === 0 ? -4 : 4,
 		duration: 2.5 + i * 0.3,
 		ease:     'sine.inOut',
 		repeat:   -1,
