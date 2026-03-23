@@ -66,9 +66,6 @@ section, footer {
 .o-que-e-visual {
 	display: none;
 	position: relative;
-	justify-content: center;
-	align-items: flex-start;
-	padding-top: 1rem;
 }
 
 .o-que-e-circle {
@@ -158,9 +155,27 @@ section, footer {
 	object-fit: cover;
 }
 
+.o-que-e-visual .criarte-icon {
+	position: absolute;
+}
+
 .hexagon-clip {
-	width: 280px;
-	margin: 20px auto;
+	width: 28vw;
+	right: -2vw;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.o-que-e-visual .criarte-icon2 {
+	width: 5.5vw;
+	top: calc(50% + 5vw);
+	left: calc(100% - 26vw);
+}
+
+.o-que-e-visual .criarte-icon3 {
+	width: 6vw;
+	top: calc(50% + 8vw);
+	left: calc(100% - 22vw);
 }
 
 .oficina-content {
@@ -316,6 +331,7 @@ section, footer {
 
 	#o-que-e .container {
 		grid-template-columns: 1fr 1fr;
+		align-items: stretch;
 	}
 
 	.o-que-e-visual {
