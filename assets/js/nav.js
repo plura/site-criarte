@@ -12,9 +12,10 @@ function setActiveNavLink(navLinks, link) {
 }
 
 function initActiveNavLink(navLinks, bottomThreshold = 40) {
-	const sections = document.querySelectorAll('section[id], footer[id]');
+	const sections = [...document.querySelectorAll('section[id], footer[id]')];
 	const lastLink = navLinks.querySelector('.nav-link:last-child a');
 
+	/* ─── IntersectionObserver for normal scroll ─────────── */
 	const observer = new IntersectionObserver(entries => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
@@ -22,14 +23,29 @@ function initActiveNavLink(navLinks, bottomThreshold = 40) {
 				setActiveNavLink(navLinks, link);
 			}
 		});
-	}, { rootMargin: '-40% 0px -55% 0px' });
+	}, { rootMargin: '-30% 0px -40% 0px' });
 
 	sections.forEach(s => observer.observe(s));
 
-	/* ─── Activate last link when near bottom ────────────── */
+	/* ─── Scroll handler: bottom threshold + recovery ───── */
 	window.addEventListener('scroll', () => {
 		const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - bottomThreshold;
-		if (atBottom) setActiveNavLink(navLinks, lastLink);
+
+		if (atBottom) {
+			setActiveNavLink(navLinks, lastLink);
+			return;
+		}
+
+		/* If last link is still active but we left the bottom,
+		   find which section is currently in the viewport centre */
+		if (lastLink?.closest('.nav-link').classList.contains('active')) {
+			const mid = window.innerHeight * 0.5;
+			const current = sections.findLast(s => s.getBoundingClientRect().top <= mid);
+			if (current) {
+				const link = navLinks.querySelector(`a[href="#${current.id}"]`);
+				setActiveNavLink(navLinks, link);
+			}
+		}
 	});
 }
 
