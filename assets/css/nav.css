@@ -46,11 +46,12 @@
 	pointer-events: auto;
 	transform: translateY(0);
 	transition: opacity 0.2s ease, transform 0.2s ease;
+	gap: var(--criarte-layout-pad);
 }
 
 .nav-links.is-open .nav-link a {
 	justify-content: flex-start;
-	padding: 0.6rem 4vw;
+	padding: 0;
 }
 
 .nav-link a {

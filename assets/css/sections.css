@@ -270,8 +270,8 @@ section, footer {
 }
 
 .eventos-images .criarte-icon1 { width: 17%; bottom: -1%; left: 0; }
-.eventos-images .criarte-icon2 { top: -3%;   right: 7%; width: 14.5%; }
-.eventos-images .criarte-icon3 { top: calc(28% - 5px); left: 44%; width: 16%; transform: translateX(-50%); }
+.eventos-images .criarte-icon2 { top: 12%;   right: 7%; width: 14.5%; }
+.eventos-images .criarte-icon3 { top: 35%;   left: 44%; width: 16%; transform: translateX(-50%); }
 
 /* ─── CONTACTOS / FOOTER ─────────────────────────────────── */
 #contactos {
