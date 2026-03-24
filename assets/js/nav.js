@@ -28,6 +28,7 @@ function initActiveNavLink(navLinks, bottomThreshold = 40) {
 	sections.forEach(s => observer.observe(s));
 
 	/* ─── Scroll handler: bottom threshold + recovery ───── */
+	if (bottomThreshold <= 0) return;
 	window.addEventListener('scroll', () => {
 		const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - bottomThreshold;
 
