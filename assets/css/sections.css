@@ -405,6 +405,14 @@ section, footer {
 	.eventos-images {
 		height: 22vw;
 	}
+
+	.eventos-circle {
+		top: 38.5%;
+	}
+
+	.eventos-images .criarte-icon3 {
+		top: 7%;
+	}
 }
 
 /* ─── Responsive (min-width: 1024px) ────────────────────── */
@@ -420,5 +428,21 @@ section, footer {
 
 	.oficina-escrita .oficina-content {
 		padding-left: calc(var(--criarte-layout-pad) * 4);
+	}
+
+	.eventos-circle {
+		top: 46.5%;
+	}
+
+	.eventos-images .criarte-icon3 {
+		top: 22%;
+	}
+
+	.eventos-images .criarte-icon2 {
+		top: -5%;
+	}
+
+	.eventos-images .criarte-icon1 {
+		bottom: -3%;
 	}
 }

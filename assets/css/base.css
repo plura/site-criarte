@@ -118,8 +118,17 @@ button:focus-visible {
 	:root {
 		--criarte-layout-pad:              3vw;
 		--criarte-section-pad-v:           80px;
-		--criarte-oficina-icon-size:       200px;
-		--criarte-team-member-photo-size:  10vw;
+		--criarte-oficina-icon-size:       100px;
+		--criarte-team-member-photo-size:  20vw;
 		--criarte-team-member-icon-size:   5vw;
+	}
+}
+
+/* ─── Responsive (min-width: 1024px) ────────────────────── */
+@media (min-width: 1024px) {
+	:root {
+		--criarte-team-member-photo-size:  15vw;
+		--criarte-team-member-icon-size:   8vw;
+		--criarte-oficina-icon-size:       12vw;
 	}
 }
