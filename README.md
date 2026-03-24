@@ -43,6 +43,5 @@ Mobile-first. Breakpoints:
 
 ## Dependencies (CDN)
 
-- [Lucide](https://lucide.dev/) — icons
 - [GSAP](https://gsap.com/) + ScrollTrigger + SplitText — animations
 - [Google Fonts](https://fonts.google.com/) — Nunito, Nunito Sans
