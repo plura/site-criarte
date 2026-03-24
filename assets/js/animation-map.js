@@ -12,7 +12,7 @@ export const animations = [
 	/* ─── Nav links (load) ─────────────────────────────────── */
 	{
 		selector: '#nav .nav-link',
-		from:     { opacity: 0, y: -8, duration: 0.4, ease: 'power2.out' },
+		from:     { opacity: 0, y: 30, duration: 0.6, ease: 'back.out(2.5)' },
 		stagger:  0.08,
 		trigger:  null,
 	},
