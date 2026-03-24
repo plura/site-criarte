@@ -121,10 +121,8 @@
 /* ─── Credits bar ────────────────────────────────────────── */
 .credits {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0.25rem;
-	padding: 1rem var(--criarte-layout-pad);
+	justify-content: space-between;
+	padding: 1rem calc(var(--criarte-layout-pad) * 2);
 	background: var(--criarte-colors-text);
 	font-size: var(--criarte-fonts-size-xs);
 	color: rgba(255, 255, 255, 0.5);
@@ -137,14 +135,6 @@
 
 .credits a:hover {
 	color: #fff;
-}
-
-@media (min-width: 768px) {
-	.credits {
-		flex-direction: row;
-		justify-content: space-between;
-		padding-inline: calc(var(--criarte-layout-pad) * 2);
-	}
 }
 
 /* ─── Responsive (min-width: 768px) ──────────────────────── */
