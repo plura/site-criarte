@@ -6,6 +6,10 @@
  * @param {object}         trigger — ScrollTrigger options (start, once…)
  */
 export function animate(target, from, trigger = {}) {
+	if (trigger === null) {
+		gsap.from(target, from);
+		return;
+	}
 	gsap.from(target, {
 		...from,
 		scrollTrigger: {
@@ -26,6 +30,10 @@ export function animate(target, from, trigger = {}) {
  */
 export function animateStagger(selector, from, stagger = 0.15, trigger = {}) {
 	gsap.utils.toArray(selector).forEach((el, i) => {
+		if (trigger === null) {
+			gsap.from(el, { ...from, delay: i * stagger });
+			return;
+		}
 		gsap.from(el, {
 			...from,
 			delay: i * stagger,

@@ -9,6 +9,14 @@
 
 export const animations = [
 
+	/* ─── Nav links (load) ─────────────────────────────────── */
+	{
+		selector: '#nav .nav-link',
+		from:     { opacity: 0, y: -8, duration: 0.4, ease: 'power2.out' },
+		stagger:  0.08,
+		trigger:  null,
+	},
+
 	/* ─── Section titles ──────────────────────────────────── */
 	{
 		selector: '.section-title',
