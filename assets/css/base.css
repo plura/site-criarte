@@ -127,8 +127,8 @@ button:focus-visible {
 /* ─── Responsive (min-width: 1024px) ────────────────────── */
 @media (min-width: 1024px) {
 	:root {
-		--criarte-team-member-photo-size:  15vw;
-		--criarte-team-member-icon-size:   8vw;
+		--criarte-team-member-photo-size:  13vw;
+		--criarte-team-member-icon-size:   6vw;
 		--criarte-oficina-icon-size:       11vw;
 	}
 }
