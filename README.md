@@ -20,7 +20,9 @@ assets/
     nav.js           # Nav toggle, active link tracking (IntersectionObserver + scroll)
     animate.js       # GSAP helpers: animate(), animateStagger()
     animation-map.js # Declarative animation definitions (selector, from, stagger, trigger)
-  images/            # Photos and decorative elements (WebP)
+  images/
+    photos/          # Photography (hero, oficinas, team, eventos) — WebP
+    icons/           # SVG icons (brand, UI, social, decorative criarte-icons)
 ```
 
 ## CSS Architecture
