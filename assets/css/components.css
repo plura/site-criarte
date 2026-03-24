@@ -118,6 +118,23 @@
 	user-select: none;
 }
 
+/* ─── Plura credit ───────────────────────────────────────── */
+.plura-credit {
+	text-align: center;
+	padding: 1rem;
+	font-size: var(--criarte-fonts-size-xs);
+	color: var(--criarte-colors-grey);
+}
+
+.plura-credit a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.plura-credit a:hover {
+	color: var(--criarte-colors-text);
+}
+
 /* ─── Responsive (min-width: 768px) ──────────────────────── */
 @media (min-width: 768px) {
 	.team-grid {
