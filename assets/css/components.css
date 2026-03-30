@@ -101,10 +101,9 @@
 	color: var(--criarte-colors-pink);
 }
 
-.social-links svg {
+.social-links img {
 	width: 24px;
 	height: 24px;
-	fill: currentColor;
 }
 
 /* ─── Decorative elements ────────────────────────────────── */
