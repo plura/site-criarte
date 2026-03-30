@@ -93,18 +93,24 @@
 }
 
 .social-links a {
-	color: var(--criarte-colors-grey);
-	transition: color 0.2s;
+	display: block;
+	width: 24px;
+	height: 24px;
+	background-color: var(--criarte-colors-grey);
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	transition: background-color 0.2s;
 }
 
 .social-links a:hover {
-	color: var(--criarte-colors-pink);
+	background-color: var(--criarte-colors-pink);
 }
 
-.social-links img {
-	width: 24px;
-	height: 24px;
-}
+.social-instagram { mask-image: url('../images/icons/social-instagram.svg'); }
+.social-facebook  { mask-image: url('../images/icons/social-facebook.svg');  }
+.social-youtube   { mask-image: url('../images/icons/social-youtube.svg');   }
+.social-linkedin  { mask-image: url('../images/icons/social-linkedin.svg');  }
 
 /* ─── Decorative elements ────────────────────────────────── */
 .deco {
