@@ -22,7 +22,7 @@ assets/
     animation-map.js # Declarative animation definitions (selector, from, stagger, trigger)
   images/
     photos/          # Photography (hero, oficinas, team, eventos) — WebP
-    icons/           # SVG icons (brand, UI, social, decorative criarte-icons)
+    icons/           # SVG icons: social- prefix (inline SVGs from FA/Lucide), decorative criarte-icons
 ```
 
 ## CSS Architecture
@@ -41,7 +41,8 @@ All design tokens are defined as CSS custom properties in `base.css` under the `
 Mobile-first. Breakpoints:
 
 - `768px` — tablet
-- `1024px` — laptop and above
+- `1024px` — laptop
+- `1440px` — desktop (planned)
 
 ## Dependencies (CDN)
 
