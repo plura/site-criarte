@@ -1,0 +1,25 @@
+{
+    "name": "cri-ar-te",
+    "host": "",
+    "protocol": "ftp",
+    "port": 21,
+    "username": "",
+    "password": "",
+    "remotePath": "/www",
+    "uploadOnSave": false,
+    "useTempFile": false,
+    "openSsh": false,
+    "secureOptions": {
+        "rejectUnauthorized": false
+    },
+    "syncOption": {
+        "delete": true
+    },
+    "ignore": [
+        ".git",
+        ".gitignore",
+        ".claude",
+        ".vscode",
+        "README.md"
+    ]
+}
