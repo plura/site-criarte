@@ -154,12 +154,14 @@ section, footer {
 	width: 22%;
 	top: calc(50% + 10%);
 	left: 8%;
+	transform: rotate(-17deg);
 }
 
 .o-que-e-visual .criarte-icon2 {
 	width: 24%;
 	top: calc(50% + 20%);
 	left: 20%;
+	transform: rotate(22deg);
 }
 
 .oficina-content {
@@ -176,6 +178,11 @@ section, footer {
 	left: 50%;
 	transform: translateX(-50%);
 }
+
+.oficina-criativa .criarte-icon { transform: translateX(-50%) rotate(-30deg); }
+.oficina-cuidar   .criarte-icon { transform: translateX(-50%) rotate(-17deg); }
+.oficina-escrita  .criarte-icon { transform: translateX(-50%) rotate(-25deg); }
+.oficina-artes    .criarte-icon { transform: translateX(-50%) rotate(-18deg); }
 
 .oficina-title {
 	font-size: var(--criarte-fonts-size-h3);
@@ -269,9 +276,9 @@ section, footer {
 	width: 11.5%;
 }
 
-.eventos-images .criarte-icon1 { width: 17%; bottom: -1%; left: 0; }
-.eventos-images .criarte-icon2 { top: 12%;   right: 7%; width: 14.5%; }
-.eventos-images .criarte-icon3 { top: 35%;   left: 44%; width: 16%; transform: translateX(-50%); }
+.eventos-images .criarte-icon1 { width: 17%; bottom: -1%; left: 0; transform: rotate(-42deg); }
+.eventos-images .criarte-icon2 { top: 12%;   right: 7%; width: 14.5%; transform: rotate(-25deg); }
+.eventos-images .criarte-icon3 { top: 35%;   left: 44%; width: 16%; transform: translateX(-50%) rotate(19deg); }
 
 /* ─── CONTACTOS / FOOTER ─────────────────────────────────── */
 #contactos {
@@ -368,6 +375,11 @@ section, footer {
 	.oficina-artes    .criarte-icon { bottom: 0; right: 0; }
 
 	.oficina-escrita  .criarte-icon { top: 0; left: 0; }
+
+	.oficina-criativa .criarte-icon { transform: rotate(-30deg); }
+	.oficina-cuidar   .criarte-icon { transform: rotate(-17deg); }
+	.oficina-escrita  .criarte-icon { transform: rotate(-25deg); }
+	.oficina-artes    .criarte-icon { transform: rotate(-18deg); }
 
 	/* Reverse: content left (2fr), img-wrap right (1fr) — swap visual order */
 	.oficina.reverse {
